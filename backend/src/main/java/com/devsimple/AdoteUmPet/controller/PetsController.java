@@ -3,13 +3,11 @@ package com.devsimple.AdoteUmPet.controller;
 import com.devsimple.AdoteUmPet.model.Pets;
 import com.devsimple.AdoteUmPet.services.PetsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/pets")
@@ -19,12 +17,24 @@ public class PetsController {
     private PetsService petsService;
 
     @GetMapping
-    public ResponseEntity<List<Pets>> findAll(){
-        return ResponseEntity.ok(petsService.listAll());
+    public ResponseEntity<Page<Pets>> findAll(Pageable pageable){
+        return ResponseEntity.ok(petsService.listAll(pageable));
     }
 
     @PostMapping
-    public ResponseEntity<Pets> save(Pets pets){
+    public ResponseEntity<Pets> save(@RequestBody Pets pets){
         return ResponseEntity.ok(petsService.save(pets));
+    }
+
+
+    @PostMapping("/adotar/{id}")
+    public ResponseEntity<Pets> adopt(@PathVariable Long id){
+        return ResponseEntity.ok(petsService.adopt(id));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Pets> delete(@PathVariable Long id){
+        petsService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }

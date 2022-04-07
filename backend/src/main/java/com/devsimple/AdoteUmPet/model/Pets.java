@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
@@ -18,7 +19,10 @@ public class Pets {
     private Long id;
     private String nome;
     private String tipo;
-    private String cor;
     private String raca;
+    private String imagem1;
+    private String imagem2;
+    private String imagem3;
+    private boolean adotado;
 
 }
