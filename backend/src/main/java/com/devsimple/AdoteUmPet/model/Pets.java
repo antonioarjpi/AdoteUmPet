@@ -20,6 +20,8 @@ public class Pets {
     private String nome;
     private String tipo;
     private String raca;
+    private Double peso;
+    private String local;
     private String imagem1;
     private String imagem2;
     private String imagem3;
