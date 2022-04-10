@@ -1,10 +1,12 @@
 package com.devsimple.AdoteUmPet.services;
 
 import com.devsimple.AdoteUmPet.model.Pets;
+import com.devsimple.AdoteUmPet.model.Usuario;
 import com.devsimple.AdoteUmPet.repository.PetsRepository;
 import com.devsimple.AdoteUmPet.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,9 @@ public class PetsService {
 
     @Autowired
     private PetsRepository petsRepository;
+
+    @Autowired
+    private UsuarioService usuarioService;
 
     @Transactional
     public Pets search(Long id){
@@ -33,9 +38,11 @@ public class PetsService {
     }
 
     @Transactional
-    public Pets adopt(Long id){
-        Pets pets = search(id);
+    public Pets adopt(Long usuarioId, Long PetId){
+        Pets pets = search(PetId);
+        Usuario usuario = usuarioService.search(usuarioId);
         pets.setAdotado(true);
+        pets.setUsuario(usuario);
         return petsRepository.save(pets);
     }
 
@@ -43,7 +50,7 @@ public class PetsService {
     public void delete(Long id){
         try{
             petsRepository.deleteById(id);
-        }catch (DataIntegrityViolationException e){
+        }catch (EmptyResultDataAccessException e){
             throw new ObjectNotFoundException("Pet não encontrado");
         }
     }

@@ -1,0 +1,55 @@
+.pets-pagination-container {
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pets-pagination-container button{
+    color: antiquewhite;
+}
+
+.pets-pagination-box {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.pets-pagination-box form {
+    width: 100%;
+    display: flex;
+}
+
+.pets-pagination-button {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-primary);
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: #fff;
+    
+}
+
+.pets-pagination-button:disabled {
+    cursor: unset;
+    color: rgb(90, 89, 89);
+}
+
+.pets-pagination-container p {
+    color: #fff;
+    margin: 0;
+    font-size: 12px;
+    
+}
+
+.pets-flip-horizontal {
+    transform: rotate(180deg);
+}
