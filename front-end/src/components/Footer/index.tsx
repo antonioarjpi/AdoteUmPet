@@ -3,7 +3,6 @@ import Logo from '../../assets/AdoteUmPet.png'
 
 function Footer(){
     return(
-        <div className="container-fluid pb-0 mb-0 justify-content-center text-light ">
         <footer>
             <div className="row my-5 justify-content-center py-5">
                 <div className="col-11">
@@ -41,7 +40,7 @@ function Footer(){
                 </div>
             </div>
         </footer>
-    </div>
+   
     )
 }
 

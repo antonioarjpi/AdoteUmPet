@@ -17,9 +17,9 @@ function PetCard( { pets } : Props){
         <div>
         <img className="movie-movie-card-image" src={pets.imagem1} alt={pets.nome} />
         <div className="movie-card-bottom-container">
-            <h3>{pets.nome}</h3>
+            <h4>{pets.nome}</h4>
             <Link to={`/form/${pets.id}`}>
-                <a className="btn btn-primary dsmovie-btn" href="#header">Adotar</a>
+                <a className="btn btn-primary pet-btn" href="#header">Adotar</a>
             </Link>
             
         </div>

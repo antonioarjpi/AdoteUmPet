@@ -22,7 +22,7 @@ function Listing(){
     })
     
     useEffect(() => {
-        axios.get(`${BASE_URL}/pets?size=8&page=${pageNumber}`)
+        axios.get(`${BASE_URL}/pets?size=4&page=${pageNumber}`)
         .then(response => {
             const data = response.data as PetsPage;
             setPage(data);
@@ -37,9 +37,6 @@ function Listing(){
     
     return(
         <>      
-        <body>
-            
-        
         <div className="movie-pagination-container">
             </div>
             <Pagination page={page} onChange={handlePageChange}/>
@@ -52,8 +49,7 @@ function Listing(){
                     ))}
                 </div>
     
-            </div>
-            </body>            
+            </div>          
         </>
 
     )

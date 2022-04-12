@@ -1,3 +1,19 @@
-body{
-    margin: 50px;
+.carousel{
+    margin-top: 140px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.carousel img{
+    background-size: cover;
+}
+
+
+
+.carousel-inner{
+    background-position: center top;
+    display: grid;
+    align-items: center;
+    background-size: auto;
 }

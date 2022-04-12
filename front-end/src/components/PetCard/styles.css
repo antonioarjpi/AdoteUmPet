@@ -1,6 +1,21 @@
 .movie-movie-card-image {
     padding: 6px;
-    background-color: #FFFFFF;
+    background-color: #dadadaaf;
     width: 100%;
     border-radius: 8px 8px 0 0;
+}
+
+.movie-card-bottom-container{
+    text-align: center;
+    padding: 2px;
+    background-color: #dadadaaf;
+    border-radius: 0 0 8px 8px;
+}
+
+img{
+    border-radius: 8px;
+}
+
+.pet-btn{
+    margin-bottom: 1.0rem;
 }

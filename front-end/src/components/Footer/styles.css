@@ -1,9 +1,9 @@
-.container-fluid {
+footer {
     overflow: hidden;
     background: #262626;
     color: #627482 !important;
     margin-bottom: 0;
-    padding-bottom: 0
+    padding-bottom: 0;
 }
 
 small {
