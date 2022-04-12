@@ -6,12 +6,11 @@ function Pets(){
     return(
         <body>
             <div className='container'>
-        <div className="row"> 
-            <h1 className="align-text-top">Um pet próximo de você</h1>
+            <div className="row"> 
             <Listing />
        
-        </div> 
-        </div>
+            </div> 
+            </div>
     </body>
     )
 }

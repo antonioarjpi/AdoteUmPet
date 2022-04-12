@@ -1,6 +1,6 @@
 .movie-movie-card-image {
     padding: 6px;
-    background-color: #dadadaaf;
+    background: #fab9b9;
     width: 100%;
     border-radius: 8px 8px 0 0;
 }
@@ -8,7 +8,7 @@
 .movie-card-bottom-container{
     text-align: center;
     padding: 2px;
-    background-color: #dadadaaf;
+    background: linear-gradient(-10deg, #fd7474, #e9bebe);
     border-radius: 0 0 8px 8px;
 }
 

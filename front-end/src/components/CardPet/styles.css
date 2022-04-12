@@ -1,0 +1,45 @@
+.pet-form-container {
+    max-width: 480px;
+    margin: 10px auto;
+    margin-top: 120px;
+    padding: 20px;
+}
+
+.pet-form {
+    margin-top: 2.1rem;
+    width: calc(100% - 20px);
+}
+
+.pet-form-group {
+    margin-bottom: 20px;
+}
+
+.pet-form-group label {
+    font-size: 15px;
+    color: rgba(14, 13, 13, 0.658);
+}
+
+.pet-form-group a {
+    font-size: 10px;
+    color: rgb(55, 113, 146);
+}
+
+.pet-form-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.pet-card-bottom-container-btn {
+    padding-top: 80px;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 20px 10px;
+    border-radius: 8px 8px 8px 8px;
+    margin-bottom: 135px;
+}
+
+
+

@@ -22,6 +22,11 @@ public class PetsController {
         return ResponseEntity.ok(petsService.listAll(pageable));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Pets> findById(@PathVariable Long id){
+        return ResponseEntity.ok(petsService.search(id));
+    }
+
     @PostMapping
     public ResponseEntity<Pets> save(@RequestBody Pets pets){
         return ResponseEntity.ok(petsService.save(pets));

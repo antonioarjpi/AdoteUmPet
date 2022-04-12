@@ -1,5 +1,6 @@
 import "./styles.css"
 import Logo from '../../assets/AdoteUmPet.png'
+import { Link } from "react-router-dom";
 
 function Navbar(){
     return(  
@@ -17,7 +18,7 @@ function Navbar(){
                 <a className="nav-link active" aria-current="page" href="#">Início</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Parceiros</a>
+                <a className="nav-link" href="#parceiros">Parceiros</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Contatos</a>
@@ -26,7 +27,9 @@ function Navbar(){
                 <a className="nav-link" href="#">Apoie nossa causa</a>
               </li>
             </ul>
+            <Link to={"/cadastrarpet"}>
             <button type="button" className="btn btn-lg btn-outline-warning" >Cadastre seu pet</button>
+            </Link>
           </div>
         </div>
       </nav>

@@ -1,21 +1,24 @@
 .pets-pagination-container {
     padding: 15px 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
 
+}
+
+.pets-pagination-container h1{
+    justify-content: left;
+    align-items: left;
+    color: rgba(0, 0, 0, 0.781);
 }
 
 .pets-pagination-container button{
-    color: antiquewhite;
+    color: rgb(44, 44, 43);
 }
 
 .pets-pagination-box {
-    width: 180px;
+    width: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .pets-pagination-box form {
@@ -40,7 +43,7 @@
 
 .pets-pagination-button:disabled {
     cursor: unset;
-    color: rgb(90, 89, 89);
+    color: rgba(90, 89, 89, 0.466);
 }
 
 .pets-pagination-container p {
