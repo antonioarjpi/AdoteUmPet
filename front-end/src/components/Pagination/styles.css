@@ -4,10 +4,16 @@
 
 }
 
-.pets-pagination-container h1{
+.pets-pagination-container h2{
     justify-content: left;
     align-items: left;
     color: rgba(0, 0, 0, 0.781);
+    font-family: Mulish, sans-serif;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 45px;
+    text-decoration: none solid rgb(69, 69, 69);
+    word-spacing: 0px;
 }
 
 .pets-pagination-container button{

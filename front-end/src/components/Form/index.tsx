@@ -6,7 +6,7 @@ import { Pets } from '../../types/pets';
 import { BASE_URL } from '../../utils/request';
 
 
-import './styles.css';
+import "../Form/styles.css"
 
 
 
@@ -67,15 +67,16 @@ function FormCard( {petId } : Props){
                 <h6>Raça: {pet?.raca}</h6>
                 <h6>Peso: {pet?.peso} KG</h6>
                 <form className="pet-form" onSubmit={handleSubmit}>
-                    <div className="form-group pet-form-group">
-                        <label htmlFor="nome">Informe seu nome</label>
-                        <input type="nome" className="form-control" id="nome" />
+                    <div className="form-group">
+                        <label htmlFor="name">Informe seu nome</label>
+                        <input type="name" className="form-control" id="nome" />
                     </div>
-                    <div className="form-group pet-form-group">
-                        <label htmlFor="email">Informe seu email</label>
-                        <input type="email" className="form-control" id="email" />
+                    
+                    <div className="form-group">
+                        <label htmlFor="text">Informe seu e-mail</label>
+                        <input type="name" className="form-control" id="email" />
                     </div>
-                    <div className="form-group pet-form-group">
+                    <div className="form-group">
                         <label htmlFor="local">Onde você mora?</label>
                         <input type="local" className="form-control" id="local" />
                     </div>

@@ -14,17 +14,25 @@ function PetCard( { pets } : Props){
     }
 
     return(
-        <div>
-        <img className="movie-movie-card-image" src={pets.imagem1} alt={pets.nome} />
-        <div className="movie-card-bottom-container">
-            <h4>{pets.nome}</h4>
+        <div className="a-box">
+            <div className="img-container">
+                <div className="img-inner">
+                    <div className="inner-skew">
+                        <img src={pets.imagem1} alt={pets.nome} />
+                        </div>
+                    </div>
+                </div>
+        <div className="text-container">
+            <h3>{pets.nome}</h3>
             <h6>{pets.local}</h6>
             <Link to={`/form/${pets.id}`}>
                 <a className="btn btn-primary pet-btn" href="#header">Quero Adotar</a>
             </Link>
             
         </div>
-    </div>   
+        </div>
+    
+     
     )
 }
 

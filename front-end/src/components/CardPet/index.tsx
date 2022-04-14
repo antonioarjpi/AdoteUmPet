@@ -45,65 +45,63 @@ function CardPet(){
 
     return(
 
-        <div className="pet-form-container">
+        
+        <div className="container ">
 
-        <div className="pet-card-bottom-container-btn">
-            <form className="pet-form" onSubmit={handleSubmit}>
-                <div className="form-group pet-form-group">
-                    <label htmlFor="nome">Nome do pet</label>
+            <form onSubmit={handleSubmit} id="contact_form">
+                <div className="name">
+               
                     <input type="text" placeholder='Nome' className="form-control" id="nome" />
                 </div>
 
-                <div className="form-group pet-form-group">
-                    <label htmlFor="tipo">Espécie</label>
-                    <select className="form-control form-control" id='tipo'>
-                    <option>Cachorro</option>
-                    <option>Gato</option>
-                    </select>
+                <div className="email">
+                    <input type="email" placeholder='Raça' className="form-control" id="raca" />
                 </div>
 
-                <div className="form-group pet-form-group">
-                    <label htmlFor="peso">Peso</label>
+                <div className="subject">
+                <label htmlFor="tipo"></label>
+                <select placeholder="Subject line" name="subject" id="tipo" required>
+                    <option disabled hidden selected>Espécie</option>
+                    <option>Gato</option>
+                    <option>Cachorro</option>
+                   
+                </select>
+                </div>
+
+                <div className="name">
                     <input type="text" placeholder='Peso' className="form-control" id="peso" />
                 </div>
 
-                <div className="form-group pet-form-group">
-                    <label htmlFor="raca">Raça</label>
-                    <input type="text" placeholder='Raça' className="form-control" id="raca" />
+                <div className="email"> 
+                    <input type="text" placeholder='Local' id="local" />
                 </div>
 
-                <div className="form-group pet-form-group">
-                    <label htmlFor="local">Localidade</label>
-                    <input className="form-control" placeholder='Local' id="local" />
-                    <a href='https://www.thepetdb.org/' target={"_blank"}>Não sabe onde encontrar? </a>
+                <div className="name">
+                    <input type="email" placeholder='Imagem Capa' id="imagem1" />
                 </div>
 
-                <div className="form-group pet-form-group">
-                    <label htmlFor="imagem1">Imagem 1</label>
-                    <input className="form-control" placeholder='Imagem Capa' id="imagem1" />
+                <div className="email">
+                    <input type="text" placeholder='Imagem Extra'  id="imagem2" />
                 </div>
 
-                <div className="form-group pet-form-group">
-                    <label htmlFor="imagem2">imagem2</label>
-                    <input className="form-control" placeholder='Imagem Extra'  id="imagem2" />
+                <div className="form-group">
+                    <input type="text" placeholder='Imagem Extra'  id="imagem3" />
                 </div>
 
-                <div className="form-group pet-form-group">
-                    <label htmlFor="imagem3">imagem3</label>
-                    <input className="form-control" placeholder='Imagem Extra'  id="imagem3" />
+                <div className="btn">
+                    <button type="submit"  onClick={() => navigate(-1)} >Cadastrar </button>
                 </div>
 
-                <div className="pet-form-btn-container">
-                    <button type="submit" className="btn btn-primary pet-btn" onClick={() => navigate(-1)}>Salvar</button>
-                </div>
+                <Link to="/">
+                <button className="btn btn-danger pet-btn mt-3" onClick={() => navigate(-1)}>Cancelar</button>
+                </Link>
             </form >
 
-            <Link to="/">
-                <button className="btn btn-primary pet-btn mt-3" onClick={() => navigate(-1)}>Cancelar</button>
-            </Link>
+           
             
-        </div >
+        
     </div >
+    
 
     )
 }

@@ -4,3 +4,15 @@
     display: flex;
     text-align: center;
 }
+
+h2{
+ 
+    
+    font-family: Mulish, sans-serif;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 45px;
+    text-decoration: none solid rgb(69, 69, 69);
+    text-align: center;
+    word-spacing: 0px;
+}

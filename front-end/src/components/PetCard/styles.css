@@ -1,22 +1,58 @@
-.movie-movie-card-image {
-    padding: 6px;
-    background: #fab9b9;
-    width: 100%;
-    height: 14.9rem;
-    border-radius: 8px 8px 0 0;
-}
-
-.movie-card-bottom-container{
-    text-align: center;
-    padding: 2px;
-    background: linear-gradient(-10deg, #fd7474, #e9bebe);
-    border-radius: 0 0 8px 8px;
-}
-
-img{
-    border-radius: 8px;
-}
-
 .pet-btn{
     margin-bottom: 1.0rem;
 }
+
+
+
+
+
+
+
+.a-box {
+    display: inline-block;
+    width: 240px;
+    text-align: center;
+  }
+  
+  .img-container {
+      height: 230px;
+      width: 200px;
+      overflow: hidden;
+      border-radius: 0px 0px 20px 20px;
+      display: inline-block;
+  }
+  
+  .img-container img {
+      transform: skew(0deg, -13deg);
+      height: 250px;
+      margin: -35px 0px 0px -70px;
+  }
+  
+  .inner-skew {
+      display: inline-block;
+      border-radius: 20px;
+      overflow: hidden;
+      padding: 0px;
+      transform: skew(0deg, 13deg);
+      font-size: 0px;
+      margin: 30px 0px 0px 0px;
+      background: #c8c2c2;
+      height: 250px;
+      width: 200px;
+  }
+  
+  .text-container {
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+    padding: 120px 20px 20px 20px;
+    border-radius: 20px;
+    background: #fff;
+    margin: -120px 0px 0px 0px;
+    line-height: 19px;
+    font-size: 14px;
+  }
+  
+  .text-container h3 {
+    margin: 20px 0px 10px 0px;
+    color: #04bcff;
+    font-size: 18px;
+  }
