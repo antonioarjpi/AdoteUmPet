@@ -4,6 +4,7 @@ export type Pets = {
     tipo: string;
     peso: number;
     local: string;
+    raca: string;
     imagem1: string;
     imagem2: string;
     imagem3: string;

@@ -33,9 +33,9 @@ public class PetsController {
     }
 
 
-    @PostMapping("/usuario/{usuarioId}/adotar/{PetId}")
-    public ResponseEntity<Pets> adopt(@PathVariable Long usuarioId, @PathVariable Long PetId){
-        return ResponseEntity.ok(petsService.adopt(usuarioId, PetId));
+    @PutMapping("/usuario/adotar/{PetId}")
+    public ResponseEntity<Pets> adopt(@RequestBody Usuario usuario, @PathVariable Long PetId){
+        return ResponseEntity.ok(petsService.adopt(usuario, PetId));
     }
 
     @DeleteMapping("/{id}")

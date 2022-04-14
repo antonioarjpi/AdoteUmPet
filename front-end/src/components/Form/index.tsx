@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
+import { url } from 'inspector';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Pets } from '../../types/pets';
@@ -31,19 +32,24 @@ function FormCard( {petId } : Props){
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
+        const nome = (event.target as any).nome.value;
         const email = (event.target as any).email.value;
-        const score = (event.target as any).score.value;
+        const local = (event.target as any).local.value;
+        
 
         const config: AxiosRequestConfig = {
             baseURL: BASE_URL,
             method: 'PUT',
-            url: '/scores',
+            url: '/pets/usuario/adotar/'+petId,
             data: {
+                nome: nome,
                 email: email,
-                score: score
+                local: local
               
             }
         }
+
+       
 
         axios(config).then(response => {
             navigate("/")
@@ -53,33 +59,37 @@ function FormCard( {petId } : Props){
     
 
     return(
-        <div className="movie-form-container" id='topo' >
-            <img className="movie-movie-card-image" src={pet?.imagem1} alt={pet?.nome} />
-            <div className="movie-card-bottom-container" id='card'>
+        <div className="pet-form-container" id='topo' >
+            <img className="pet-card-image" src={pet?.imagem1} alt={pet?.nome} />
+            <div className="pet-card-bottom-container" id='card'>
                 <h3>{pet?.nome}</h3>
-                <form className="movie-form" onSubmit={handleSubmit}>
-                    <div className="form-group movie-form-group">
+                <h6>Localizado: {pet?.local}</h6>
+                <h6>Raça: {pet?.raca}</h6>
+                <h6>Peso: {pet?.peso} KG</h6>
+                <form className="pet-form" onSubmit={handleSubmit}>
+                    <div className="form-group pet-form-group">
+                        <label htmlFor="nome">Informe seu nome</label>
+                        <input type="nome" className="form-control" id="nome" />
+                    </div>
+                    <div className="form-group pet-form-group">
                         <label htmlFor="email">Informe seu email</label>
                         <input type="email" className="form-control" id="email" />
                     </div>
-                    <div className="form-group movie-form-group">
-                        <label htmlFor="score">Informe sua avaliação</label>
-                        <select className="form-control" id="score">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                    <div className="form-group pet-form-group">
+                        <label htmlFor="local">Onde você mora?</label>
+                        <input type="local" className="form-control" id="local" />
                     </div>
-                    <div className="movie-form-btn-container">
-                        <button type="submit" className="btn btn-primary movie-btn" onClick={() => navigate(-1)}>Salvar</button>
-                    </div>
+
+
+                    
+                    <button type="submit" className="btn btn-primary pets-btn" onClick={() => navigate(-1)}>Salvar</button>
+                   
+                    <Link to="/">
+                    <button type="button" className="btn btn-primary pets-btn mt-3" onClick={() => navigate(-1)}>Cancelar</button>
+                    </Link>
                 </form >
 
-                <Link to="/">
-                    <button className="btn btn-primary movie-btn mt-3" onClick={() => navigate(-1)}>Cancelar</button>
-                </Link>
+              
                 
             </div >
         </div >

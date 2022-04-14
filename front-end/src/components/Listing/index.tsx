@@ -34,11 +34,11 @@ function Listing(){
         setPageNumber(newPageNumber);
     }
 
+     
+
     
     return(
         <>      
-        <div className="movie-pagination-container">
-            </div>
             <Pagination page={page} onChange={handlePageChange}/>
             <div className="container">
                 <div className="row">

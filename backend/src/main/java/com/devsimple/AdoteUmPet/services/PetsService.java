@@ -38,9 +38,8 @@ public class PetsService {
     }
 
     @Transactional
-    public Pets adopt(Long usuarioId, Long PetId){
+    public Pets adopt(Usuario usuario, Long PetId){
         Pets pets = search(PetId);
-        Usuario usuario = usuarioService.search(usuarioId);
         pets.setAdotado(true);
         pets.setUsuario(usuario);
         return petsRepository.save(pets);

@@ -18,8 +18,9 @@ function PetCard( { pets } : Props){
         <img className="movie-movie-card-image" src={pets.imagem1} alt={pets.nome} />
         <div className="movie-card-bottom-container">
             <h4>{pets.nome}</h4>
+            <h6>{pets.local}</h6>
             <Link to={`/form/${pets.id}`}>
-                <a className="btn btn-primary pet-btn" href="#header">Adotar</a>
+                <a className="btn btn-primary pet-btn" href="#header">Quero Adotar</a>
             </Link>
             
         </div>

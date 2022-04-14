@@ -51,11 +51,11 @@ function CardPet(){
             <form className="pet-form" onSubmit={handleSubmit}>
                 <div className="form-group pet-form-group">
                     <label htmlFor="nome">Nome do pet</label>
-                    <input type="text" className="form-control" id="nome" />
+                    <input type="text" placeholder='Nome' className="form-control" id="nome" />
                 </div>
 
                 <div className="form-group pet-form-group">
-                    <label htmlFor="tipo">Animal</label>
+                    <label htmlFor="tipo">Espécie</label>
                     <select className="form-control form-control" id='tipo'>
                     <option>Cachorro</option>
                     <option>Gato</option>
@@ -64,33 +64,33 @@ function CardPet(){
 
                 <div className="form-group pet-form-group">
                     <label htmlFor="peso">Peso</label>
-                    <input type="text" className="form-control" id="peso" />
+                    <input type="text" placeholder='Peso' className="form-control" id="peso" />
                 </div>
 
                 <div className="form-group pet-form-group">
                     <label htmlFor="raca">Raça</label>
-                    <input type="text" className="form-control" id="raca" />
+                    <input type="text" placeholder='Raça' className="form-control" id="raca" />
                 </div>
 
                 <div className="form-group pet-form-group">
                     <label htmlFor="local">Localidade</label>
-                    <input className="form-control" id="local" />
+                    <input className="form-control" placeholder='Local' id="local" />
                     <a href='https://www.thepetdb.org/' target={"_blank"}>Não sabe onde encontrar? </a>
                 </div>
 
                 <div className="form-group pet-form-group">
                     <label htmlFor="imagem1">Imagem 1</label>
-                    <input className="form-control" id="imagem1" />
+                    <input className="form-control" placeholder='Imagem Capa' id="imagem1" />
                 </div>
 
                 <div className="form-group pet-form-group">
-                    <label htmlFor="imagem2">imagem1</label>
-                    <input className="form-control" id="imagem2" />
+                    <label htmlFor="imagem2">imagem2</label>
+                    <input className="form-control" placeholder='Imagem Extra'  id="imagem2" />
                 </div>
 
                 <div className="form-group pet-form-group">
                     <label htmlFor="imagem3">imagem3</label>
-                    <input className="form-control" id="imagem3" />
+                    <input className="form-control" placeholder='Imagem Extra'  id="imagem3" />
                 </div>
 
                 <div className="pet-form-btn-container">

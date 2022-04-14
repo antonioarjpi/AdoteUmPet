@@ -1,0 +1,6 @@
+.align-middle{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+}

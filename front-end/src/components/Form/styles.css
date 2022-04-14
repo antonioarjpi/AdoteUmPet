@@ -1,0 +1,35 @@
+.pet-form-container{
+    background-color: #f3e9e9;
+}
+
+.pet-card-image {
+    padding: 6px;
+    background-color: #FFFFFF;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+
+.pet-card-image img {
+    border-radius: 8px 8px 0 0;
+}
+
+.pets-card-bottom-container h3 {
+    color: #4A4A4A;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 1px;
+    min-height: 40px;
+}
+
+.pets-btn {
+    background-color: rgb(11, 73, 124);
+    font-size: 14px;
+    font-weight: 700;
+    height: 40px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
