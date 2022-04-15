@@ -20,25 +20,24 @@ public class Pets {
     private Long id;
 
     @NotNull
-    @Size(min = 5, max = 120, message = "Deve conter 5 a 120 caracteres!")
+    @Size(min = 2, max = 120, message = "Deve conter 2 a 120 caracteres!")
     private String nome;
 
     @NotBlank
-    @Size(min = 5, max = 120, message = "Deve conter 5 a 120 caracteres!")
+    @Size(max = 120, message = "Deve conter 2 a 120 caracteres!")
     private String tipo;
 
     @NotBlank
-    @Size(min = 5, max = 120, message = "Deve conter 5 a 120 caracteres!")
     private String raca;
 
     private Double peso;
 
     @NotBlank
-    @Size(min = 5, max = 120, message = "Deve conter 5 a 120 caracteres!")
+    @Size(max = 120, message = "Deve conter 5 a 120 caracteres!")
     private String local;
 
     @NotBlank
-    @Size(min = 5, max = 255, message = "Deve conter 5 a 120 caracteres!")
+    @Size(max = 255, message = "Deve conter 5 a 120 caracteres!")
     private String imagem1;
     private String imagem2;
     private String imagem3;

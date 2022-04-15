@@ -20,11 +20,11 @@ public class Usuario {
     private Long id;
 
     @NotNull
-    @Size(min = 5, max = 120, message = "Deve conter 5 a 120 caracteres!")
+    @Size(min = 2, max = 120, message = "Deve conter 2 a 120 caracteres!")
     private String nome;
 
     @NotNull
-    @Size(min = 5, max = 120, message = "Deve conter 5 a 120 caracteres!")
+    @Size(min = 3, max = 120, message = "Deve conter 3 a 120 caracteres!")
     private String local;
 
     @NotNull
