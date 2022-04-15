@@ -42,6 +42,7 @@ public class PetsService {
         Pets pets = search(PetId);
         pets.setAdotado(true);
         pets.setUsuario(usuario);
+        usuarioService.save(usuario);
         return petsRepository.save(pets);
     }
 

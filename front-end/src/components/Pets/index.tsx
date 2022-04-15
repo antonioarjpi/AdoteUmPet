@@ -7,8 +7,7 @@ function Pets(){
         <body>
             <div className='container'>
             <div className="row"> 
-            <Listing />
-       
+            <Listing />       
             </div> 
             </div>
     </body>

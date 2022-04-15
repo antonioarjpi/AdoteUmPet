@@ -44,12 +44,15 @@ function Listing(){
                 <div className="row">
                     {page.content.map(pets => (
                         <div key={pets.id} className="col-sm-6 col-lg-4 col-xl-3 mb-3">
+                        {pets.adotado === false ? (
                             <PetCard pets={pets} />
+                        ):(
+                            <></>
+                        )}
                         </div>
                     ))}
                 </div>
-    
-            </div>          
+            </div>           
         </>
 
     )

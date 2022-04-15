@@ -46,16 +46,16 @@ function CardPet(){
     return(
 
         
-        <div className="container ">
+        <div className="container mt">
 
             <form onSubmit={handleSubmit} id="contact_form">
                 <div className="name">
                
-                    <input type="text" placeholder='Nome' className="form-control" id="nome" />
+                    <input type="text" placeholder='Nome' id="nome" />
                 </div>
 
                 <div className="email">
-                    <input type="email" placeholder='Raça' className="form-control" id="raca" />
+                    <input type="email" placeholder='Raça' id="raca" />
                 </div>
 
                 <div className="subject">
@@ -69,7 +69,7 @@ function CardPet(){
                 </div>
 
                 <div className="name">
-                    <input type="text" placeholder='Peso' className="form-control" id="peso" />
+                    <input type="text" placeholder='Peso' id="peso" />
                 </div>
 
                 <div className="email"> 

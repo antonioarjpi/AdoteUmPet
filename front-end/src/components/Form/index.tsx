@@ -66,22 +66,20 @@ function FormCard( {petId } : Props){
                 <h6>Localizado: {pet?.local}</h6>
                 <h6>Raça: {pet?.raca}</h6>
                 <h6>Peso: {pet?.peso} KG</h6>
-                <form className="pet-form" onSubmit={handleSubmit}>
-                    <div className="form-group">
+                <form onSubmit={handleSubmit}>
+                    <div>
                         <label htmlFor="name">Informe seu nome</label>
                         <input type="name" className="form-control" id="nome" />
                     </div>
                     
-                    <div className="form-group">
+                    <div>
                         <label htmlFor="text">Informe seu e-mail</label>
                         <input type="name" className="form-control" id="email" />
                     </div>
-                    <div className="form-group">
+                    <div>
                         <label htmlFor="local">Onde você mora?</label>
                         <input type="local" className="form-control" id="local" />
                     </div>
-
-
                     
                     <button type="submit" className="btn btn-primary pets-btn" onClick={() => navigate(-1)}>Salvar</button>
                    

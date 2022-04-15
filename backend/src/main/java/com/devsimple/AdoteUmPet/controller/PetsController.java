@@ -33,7 +33,7 @@ public class PetsController {
     }
 
 
-    @PutMapping("/usuario/adotar/{PetId}")
+    @PostMapping("/usuario/adotar/{PetId}")
     public ResponseEntity<Pets> adopt(@RequestBody Usuario usuario, @PathVariable Long PetId){
         return ResponseEntity.ok(petsService.adopt(usuario, PetId));
     }

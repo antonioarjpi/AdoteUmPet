@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -15,11 +18,27 @@ public class Pets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotNull
+    @Size(min = 5, max = 120, message = "Deve conter 5 a 120 caracteres!")
     private String nome;
+
+    @NotBlank
+    @Size(min = 5, max = 120, message = "Deve conter 5 a 120 caracteres!")
     private String tipo;
+
+    @NotBlank
+    @Size(min = 5, max = 120, message = "Deve conter 5 a 120 caracteres!")
     private String raca;
+
     private Double peso;
+
+    @NotBlank
+    @Size(min = 5, max = 120, message = "Deve conter 5 a 120 caracteres!")
     private String local;
+
+    @NotBlank
+    @Size(min = 5, max = 255, message = "Deve conter 5 a 120 caracteres!")
     private String imagem1;
     private String imagem2;
     private String imagem3;
