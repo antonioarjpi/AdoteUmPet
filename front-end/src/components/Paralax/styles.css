@@ -2,24 +2,24 @@
     background-image: url("../../assets/pets.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    width: 100%;
-    height: auto;
-    opacity: 0.7;
+    width: 110%;
+    height: 80%;
+    opacity: 0.8;
     background-position: center top;
     display: grid;
     align-items: center;
-    background-size: auto;
+    
   
 }
 
 .title{
-    font-size: 70px;
-    font-weight: 900;
+    font-size: 90px;
+    font-weight: 700;
     text-decoration: none solid rgb(218, 84, 84);
     text-align: center;
     word-spacing: 0px;
     color:  #000000;
-    margin-top: 10.2rem;
+    margin-top: 5.0rem;
 }
 
 
@@ -30,5 +30,5 @@
     word-spacing: 0px;
     background-position: 0% 0%;
     color:  #000000;
-    margin-bottom: 30.1rem;
+    margin-bottom: 10.1rem;
 }

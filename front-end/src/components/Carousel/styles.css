@@ -1,12 +1,21 @@
 .carousel{
     margin-top: 140px;
-    margin-bottom: 20px;
-    width: 100%;
-    height: auto;
+    margin-bottom: 10px;
+    height: 22.0rem;
+    width: 90%;
+    
+}
+.rm{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
 }
 
 .carousel img{
-    background-size: cover;
+    height: 22.0rem;
+    width: 90%;
+    border-radius: 10px;
 }
 
 
