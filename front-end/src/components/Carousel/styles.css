@@ -15,14 +15,5 @@
 .carousel img{
     height: 22.0rem;
     width: 90%;
-    border-radius: 10px;
-}
-
-
-
-.carousel-inner{
-    background-position: center top;
-    display: grid;
-    align-items: center;
-    background-size: auto;
+    border-radius: 15px;
 }

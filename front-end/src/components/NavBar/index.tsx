@@ -21,14 +21,14 @@ function Navbar(){
                 <a className="nav-link" href="#parceiros">Parceiros</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Contatos</a>
+                <a className="nav-link" href="#contatos">Contatos</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Apoie nossa causa</a>
               </li>
             </ul>
             <Link to={"/cadastrarpet"}>
-            <button type="button" className="btn btn-lg btn-outline-warning" >Cadastre seu pet</button>
+            <button type="button" className="btn btn-outline-warning" >Cadastre seu pet</button>
             </Link>
           </div>
         </div>

@@ -1,8 +1,10 @@
 package com.devsimple.AdoteUmPet.services;
 
+import com.devsimple.AdoteUmPet.dto.Adotar;
 import com.devsimple.AdoteUmPet.model.Pets;
 import com.devsimple.AdoteUmPet.model.Usuario;
 import com.devsimple.AdoteUmPet.repository.PetsRepository;
+import com.devsimple.AdoteUmPet.repository.UsuarioRepository;
 import com.devsimple.AdoteUmPet.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -20,6 +22,9 @@ public class PetsService {
 
     @Autowired
     private UsuarioService usuarioService;
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @Transactional
     public Pets search(Long id){
@@ -40,9 +45,19 @@ public class PetsService {
     @Transactional
     public Pets adopt(Usuario usuario, Long PetId){
         Pets pets = search(PetId);
+        Usuario user = usuarioRepository.findByEmail(usuario.getEmail());
+        if (user == null){
+            user = new Usuario();
+            user.setEmail(usuario.getEmail());
+            user.setNome(usuario.getNome());
+            user.setLocal(usuario.getLocal());
+
+            user = usuarioRepository.save(user);
+        }
         pets.setAdotado(true);
-        pets.setUsuario(usuario);
-        usuarioService.save(usuario);
+        pets.setUsuario(user);
+
+
         return petsRepository.save(pets);
     }
 

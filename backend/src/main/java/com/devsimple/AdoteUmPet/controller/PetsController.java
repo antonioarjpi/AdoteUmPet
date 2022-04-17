@@ -1,5 +1,6 @@
 package com.devsimple.AdoteUmPet.controller;
 
+import com.devsimple.AdoteUmPet.dto.Adotar;
 import com.devsimple.AdoteUmPet.model.Pets;
 import com.devsimple.AdoteUmPet.model.Usuario;
 import com.devsimple.AdoteUmPet.services.PetsService;
@@ -33,7 +34,7 @@ public class PetsController {
     }
 
 
-    @PostMapping("/usuario/adotar/{PetId}")
+    @PutMapping("/usuario/adotar/{PetId}")
     public ResponseEntity<Pets> adopt(@RequestBody Usuario usuario, @PathVariable Long PetId){
         return ResponseEntity.ok(petsService.adopt(usuario, PetId));
     }

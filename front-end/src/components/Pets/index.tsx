@@ -1,6 +1,5 @@
-import ParceiroBomGuy from '../../assets/img2.jpg'
 import Listing from '../Listing';
-import PetCard from '../PetCard';
+
 
 function Pets(){
     return(

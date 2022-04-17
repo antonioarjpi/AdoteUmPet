@@ -3,7 +3,7 @@ import "./styles.css"
 
 function Footer(){
     return(
-        <footer>
+        <footer id="contatos">
             <div className="row my-5 justify-content-center py-5">
                 <div className="col-11">
                     <div className="row ">

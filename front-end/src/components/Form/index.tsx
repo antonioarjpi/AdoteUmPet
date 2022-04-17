@@ -59,39 +59,93 @@ function FormCard( {petId } : Props){
     
 
     return(
-        <div className="pet-form-container" id='topo' >
-            <img className="pet-card-image" src={pet?.imagem1} alt={pet?.nome} />
-            <div className="pet-card-bottom-container" id='card'>
-                <h3>{pet?.nome}</h3>
-                <h6>Localizado: {pet?.local}</h6>
-                <h6>Raça: {pet?.raca}</h6>
-                <h6>Peso: {pet?.peso} KG</h6>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="name">Informe seu nome</label>
-                        <input type="name" className="form-control" id="nome" />
-                    </div>
-                    
-                    <div>
-                        <label htmlFor="text">Informe seu e-mail</label>
-                        <input type="name" className="form-control" id="email" />
-                    </div>
-                    <div>
-                        <label htmlFor="local">Onde você mora?</label>
-                        <input type="local" className="form-control" id="local" />
-                    </div>
-                    
-                    <button type="submit" className="btn btn-primary pets-btn" onClick={() => navigate(-1)}>Salvar</button>
-                   
-                    <Link to="/">
-                    <button type="button" className="btn btn-primary pets-btn mt-3" onClick={() => navigate(-1)}>Cancelar</button>
-                    </Link>
-                </form >
+    <section className="ftco-section mt-5">
+		<div className="container">
+			<div className="row justify-content-center">
+		    </div>
+			<div className="row justify-content-center">
+				<div className="col-md-12">
+					<div className="wrapper">
+						<div className="row no-gutters">
+							<div className="col-lg-6">
+								<div className="contact-wrap w-100 p-md-5 p-4">
+									<h3>Adotar o(a) {pet?.nome}</h3>
+									<div id="form-message-warning" className="mb-4"></div> 
+                                <div id="form-message-success" className="mb-4">
+                                Your message was sent, thank you!
+                                </div>
+									<div className="row mb-4">
+										<div className="col-md-4">
+											<div className="dbox w-100 d-flex align-items-start">
+						        		<div className="text">
+							            <p><span>Cidade - UF:</span> {pet?.local}</p>
+							          </div>
+						            </div>
+										</div>
 
-              
-                
-            </div >
-        </div >
+                                        <div className="col-md-4">
+											<div className="dbox w-100 d-flex align-items-start">
+						        		<div className="text">
+							            <p><span>Peso:</span> {pet?.peso} KG</p>
+							          </div>
+						          </div>
+										</div>
+
+                                        <div className="col-md-4">
+											<div className="dbox w-100 d-flex align-items-start">
+						        		<div className="text">
+							            <p><span>Raça:</span> {pet?.raca}</p>
+							          </div>
+						          </div>
+										</div>
+
+									</div>
+									<form method="POST" id="contactForm" name="contactForm" className="contactForm" onSubmit={handleSubmit}>
+										<div className="row">
+                                            
+											<div className="col-md-12">
+                                            <h5 className="mb-2">Suas Informações</h5>
+												<div className="form-group">
+													<input type="text" className="form-control" name="nome" id="nome" placeholder="Nome" />
+												</div>
+											</div>
+											<div className="col-md-12"> 
+												<div className="form-group">
+													<input type="email" className="form-control" name="email" id="email" placeholder="Email"/>
+												</div>
+											</div>
+											<div className="col-md-12">
+												<div className="form-group">
+													<input type="text" className="form-control" name="local" id="local" placeholder="Cidade, UF"/>
+												</div>
+											</div>
+											<div className="col-md-12">
+												<div className="form-group">
+													<input type="submit" value="Adotar" className="btn btn-primary mr-3"/>
+                                                    <Link to="/">
+                                                        <input type="button" value="Cancelar" className="btn btn-danger"/>
+                                                    </Link>
+                                                    
+													<div className="submitting"></div>
+                                                    
+												</div>
+                                                
+											</div>
+                                            
+										</div>
+									</form>
+								</div>
+							</div>
+							<div className="col-lg-6 d-flex align-items-stretch">
+								<div className="info-wrap w-100 p-5 img" ><img  src={pet?.imagem1} alt={pet?.nome} />
+			                    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
     )
 }
 
