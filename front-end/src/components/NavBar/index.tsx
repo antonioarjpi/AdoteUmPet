@@ -14,9 +14,11 @@ function Navbar(){
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
+              <Link to={"/"}>
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">Início</a>
               </li>
+              </Link>
               <li className="nav-item">
                 <a className="nav-link" href="#parceiros">Parceiros</a>
               </li>
@@ -26,10 +28,19 @@ function Navbar(){
               <li className="nav-item">
                 <a className="nav-link" href="#">Apoie nossa causa</a>
               </li>
+
+              <li className="nav-item">
+                <Link to={"/adotados"}> 
+                  <a className="nav-link text-warning">Veja quem já tem um lar <i className="fa fa-heart"></i> </a>
+                </Link>
+              </li>
+
             </ul>
+            <li className="nav-item">
             <Link to={"/cadastrarpet"}>
-            <button type="button" className="btn btn-outline-warning" >Cadastre seu pet</button>
+            <button type="button" className="nav-link btn btn-outline-warning " >Cadastre seu pet</button>
             </Link>
+            </li>
           </div>
         </div>
       </nav>

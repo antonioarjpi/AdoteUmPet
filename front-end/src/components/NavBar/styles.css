@@ -2,3 +2,10 @@
     margin-left: 3.0rem;
     margin-right: 3.0rem;
 }
+
+.nav-link a{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+}

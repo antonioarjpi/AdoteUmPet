@@ -13,13 +13,7 @@ function Home(){
             <Navbar />
             <Carousel />
             <Paralax />
-            <Pets />
-            <div className="container">
-                <Link to={"/adotados"}> 
-                <h4>Confira nossos pets já resgatados </h4>
-                </Link>
-            </div>
-            
+            <Pets />        
 
             <Parceiros />
             <Footer />

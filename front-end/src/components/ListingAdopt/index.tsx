@@ -29,28 +29,20 @@ function Listing(){
             setPage(data);
 
         })
-    }, [pageNumber]);
-
-    const handlePageChange = (newPageNumber : number ) => {
-        setPageNumber(newPageNumber);
-    }
-
-     
+    }, [pageNumber]); 
 
     
     return(
         <>      
-            <Pagination page={page} onChange={handlePageChange}/>
+            <br/><br/><br/><br/><br/>
             <div className="container">
                 <div className="row">
                     {page.content.map(pets => (
                         <>
                         {pets.adotado === true ?(
-                              <div key={pets.id} className="col-sm-6 col-lg-4 col-xl-4 mb-3">
-
-                              <PetCardAdopt pets={pets} />
-                        
-                          </div>    
+                            <div key={pets.id} className="col-sm-6 col-lg-4 col-xl-4 mb-3">
+                                <PetCardAdopt pets={pets} />
+                            </div>    
                         ):(
                             <></>
                         )    
