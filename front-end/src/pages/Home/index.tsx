@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import Carousel from "../../components/Carousel";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/NavBar";
@@ -13,6 +14,13 @@ function Home(){
             <Carousel />
             <Paralax />
             <Pets />
+            <div className="container">
+                <Link to={"/adotados"}> 
+                <h4>Confira nossos pets já resgatados </h4>
+                </Link>
+            </div>
+            
+
             <Parceiros />
             <Footer />
         </>
