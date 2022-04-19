@@ -22,7 +22,7 @@ function Listing(){
     })
     
     useEffect(() => {
-        axios.get(`${BASE_URL}/pets?size=4&page=${pageNumber}`)
+        axios.get(`${BASE_URL}/pets?size=4&page=${pageNumber}&sort=adotado`)
         .then(response => {
             const data = response.data as PetsPage;
             setPage(data);
@@ -42,14 +42,18 @@ function Listing(){
             <Pagination page={page} onChange={handlePageChange}/>
             <div className="container">
                 <div className="row">
-                    {page.content.map(pets => (
-                        <div key={pets.id} className="col-sm-6 col-lg-4 col-xl-3 mb-3">
-                        {pets.adotado === false ? (
-                            <PetCard pets={pets} />
+                {page.content.map(pets => (
+                        <>
+                        {pets.adotado === false ?(
+                            <div key={pets.id} className="col-sm-5 col-lg-4 col-xl-3 mb-3 align-middle">
+                              <PetCard pets={pets} />
+                            </div>    
                         ):(
-                            <></>
+                            <>
+                            
+                            </>
                         )}
-                        </div>
+                        </>
                     ))}
                 </div>
             </div>           

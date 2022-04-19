@@ -8,7 +8,7 @@
     background-position: center top;
     display: grid;
     align-items: center;
-    background-size: contain;
+    background-size: cover;
   
 }
 

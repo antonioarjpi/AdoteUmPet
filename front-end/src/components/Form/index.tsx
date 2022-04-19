@@ -137,8 +137,8 @@ function FormCard( {petId } : Props){
 								</div>
 							</div>
 							<div className="col-lg-6 d-flex align-items-stretch">
-								<div className="info-wrap w-100 p-5 img" ><img  src={pet?.imagem1} alt={pet?.nome} />
-			                    </div>
+								<img  src={pet?.imagem1} alt={pet?.nome} width={600} height={524}/>
+			                    
 							</div>
 						</div>
 					</div>
