@@ -18,13 +18,13 @@ function PetCard( { pets } : Props){
             <div className="img-container">
                 <div className="img-inner">
                     <div className="inner-skew">
-                        <img src={pets.imagem1} alt={pets.nome} />
+                        <img src={pets.imagem} alt={pets.nome} />
                         </div>
                     </div>
                 </div>
         <div className="text-container">
             <h3>{pets.nome}</h3>
-            <h6>{pets.local}</h6>
+            <h6>{pets.usuario.cidade}</h6>
             <Link to={`/form/${pets.id}`}>
                 <a className="btn btn-primary pet-btn" href="#header">Quero Adotar</a>
             </Link>

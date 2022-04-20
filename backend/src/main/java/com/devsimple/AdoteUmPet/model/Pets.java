@@ -1,7 +1,6 @@
 package com.devsimple.AdoteUmPet.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,10 +8,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.List;
 
 @Entity
-@Data @NoArgsConstructor @AllArgsConstructor
+@Data @NoArgsConstructor
 public class Pets {
 
     @Id
@@ -33,14 +31,9 @@ public class Pets {
     private Double peso;
 
     @NotBlank
-    @Size(max = 120, message = "Deve conter 5 a 120 caracteres!")
-    private String local;
-
-    @NotBlank
     @Size(max = 255, message = "Deve conter 5 a 120 caracteres!")
-    private String imagem1;
-    private String imagem2;
-    private String imagem3;
+    private String imagem;
+
     private boolean adotado;
 
     @ManyToOne
@@ -48,4 +41,17 @@ public class Pets {
     @JsonIgnore
     private Usuario usuario;
 
+    @ManyToOne
+    @JoinColumn(name = "adotante_id")
+    @JsonIgnore
+    private Usuario adotante;
+
+    public Pets(Long id, String nome, String tipo, String raca, Double peso, String imagem) {
+        this.id = id;
+        this.nome = nome;
+        this.tipo = tipo;
+        this.raca = raca;
+        this.peso = peso;
+        this.imagem = imagem;
+    }
 }

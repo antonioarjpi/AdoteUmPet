@@ -1,13 +1,12 @@
 package com.devsimple.AdoteUmPet.services;
 
-import com.devsimple.AdoteUmPet.dto.Adotar;
+import com.devsimple.AdoteUmPet.dto.CadastrarPetDTO;
 import com.devsimple.AdoteUmPet.model.Pets;
 import com.devsimple.AdoteUmPet.model.Usuario;
 import com.devsimple.AdoteUmPet.repository.PetsRepository;
 import com.devsimple.AdoteUmPet.repository.UsuarioRepository;
 import com.devsimple.AdoteUmPet.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -38,8 +37,23 @@ public class PetsService {
     }
 
     @Transactional
-    public Pets save(Pets pet){
-        return petsRepository.save(pet);
+    public Pets save(CadastrarPetDTO petDTO){
+        Pets pets = new Pets(null, petDTO.getNome(), petDTO.getTipo(),  petDTO.getRaca(), petDTO.getPeso(), petDTO.getImagem());
+
+        Usuario user = usuarioRepository.findByEmail(petDTO.getEmail());
+
+        if (user == null){
+            Usuario usuario = new Usuario(null, petDTO.getNomeAdotante(), petDTO.getContato(), petDTO.getCidade(),
+                    petDTO.getEstado(), petDTO.getEmail());
+            pets.setUsuario(usuario);
+            usuario = usuarioService.save(usuario);
+            pets = petsRepository.save(pets);
+
+        }else{
+            pets.setUsuario(user);
+            pets = petsRepository.save(pets);
+        }
+        return pets;
     }
 
     @Transactional
@@ -50,13 +64,14 @@ public class PetsService {
             user = new Usuario();
             user.setEmail(usuario.getEmail());
             user.setNome(usuario.getNome());
-            user.setLocal(usuario.getLocal());
+            user.setEstado(usuario.getEstado());
+            user.setCidade(usuario.getCidade());
+            user.setContato(usuario.getContato());
 
             user = usuarioRepository.save(user);
         }
         pets.setAdotado(true);
-        pets.setUsuario(user);
-
+        pets.setAdotante(user);
 
         return petsRepository.save(pets);
     }

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Pets } from "../../types/pets";
 import './styles.css'
 
@@ -18,10 +17,10 @@ function PetCardAdopt( { pets } : Props){
             <div className="box">
                 <div className="card">
                     <div className="imgBx">
-                        <img src={pets.imagem1} alt="images" />
+                        <img src={pets.imagem} alt="images" />
                     </div>
                     <div className="details">
-                        <h2>{pets.nome}<br /><span>{pets.local}</span></h2>
+                        <h2>{pets.nome}<br /><span>{pets.usuario.cidade}</span></h2>
                     </div>
                 </div>
             

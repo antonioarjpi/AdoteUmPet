@@ -16,10 +16,14 @@ function CardPet(){
         const tipo = (event.target as any).tipo.value;
         const peso = (event.target as any).peso.value;
         const raca = (event.target as any).raca.value;
-        const local = (event.target as any).local.value;
-        const imagem1 = (event.target as any).imagem1.value;
-        const imagem2 = (event.target as any).imagem2.value;
-        const imagem3 = (event.target as any).imagem3.value;
+        const imagem = (event.target as any).imagem.value;
+
+        const cidade = (event.target as any).cidade.value;
+        const estado = (event.target as any).estado.value;
+        const nomeAdotante = (event.target as any).nomeAdotante.value;
+        const email = (event.target as any).email.value;
+        const contato = (event.target as any).contato.value;
+  
 
         const config: AxiosRequestConfig = {
             baseURL: BASE_URL,
@@ -30,10 +34,13 @@ function CardPet(){
                 tipo: tipo,
                 peso: peso,
                 raca: raca,
-                local: local,
-                imagem1: imagem1,
-                imagem2: imagem2,
-                imagem3: imagem3
+                imagem: imagem,
+                cidade: cidade,
+                estado: estado,
+
+                nomeAdotante: nomeAdotante,
+                contato: contato,
+                email: email
             }
         }
 
@@ -69,43 +76,73 @@ function CardPet(){
                                             <input type="text" className="form-control" name="nome" id="nome" placeholder="Nome" />
                                         </div>
                                     </div>
-                                    <div className="email">
-                    <input type="text"  className="form-control"placeholder='Raça' id="raca" />
-                </div>
 
-                <div className="form-group">
-                <label htmlFor="tipo"></label>
-                <select placeholder="Subject line" id="tipo" required>
-                    <option disabled hidden selected>Espécie</option>
-                    <option>Gato</option>
-                    <option>Cachorro</option>
-                   
-                </select>
-                </div>
+                                    <div className="col-md-3">
+                                        <div className="email">
+                                            <input type="text"  className="form-control"placeholder='Raça' id="raca" />
+                                        </div>
+                                    </div>
 
-                <div className="col-md-12">
-                <div className="form-group">
-                    <input type="text" className="form-control" placeholder='Peso' id="peso" />
-                </div>
-                </div>
+                                    <div className="col-md-2">
+                                        <div className="form-group">
+                                            <label htmlFor="tipo"></label>
+                                            <select placeholder="Subject line" id="tipo" required>
+                                                <option disabled hidden selected>Espécie</option>
+                                                <option>Gato</option>
+                                                <option>Cachorro</option>
+                                            
+                                            </select>
+                                        </div>
+                                    </div>
 
-                <div className="form-group"> 
-                    <input type="text" className="form-control" placeholder='Local' id="local" />
-                </div>
+                                    <div className="col-md-2">
+                                        <div className="form-group">
+                                            <input type="text" className="form-control" placeholder='Peso' id="peso" />
+                                        </div>
+                                    </div>
 
-                <div className="form-group">
-                    <input type="text" className="form-control" placeholder='Imagem Capa' id="imagem1" />
-                </div>
-
-                <div className="form-group">
-                    <input type="text"  className="form-control" placeholder='Imagem Extra'  id="imagem2" />
-                </div>
-
-                <div className="form-group">
-                    <input type="text" className="form-control" placeholder='Imagem Extra'  id="imagem3" />
-                </div>
+                                    <div className="form-group">
+                                        <input type="text" className="form-control" placeholder='Link da Imagem' id="imagem" />
+                                    </div>
 
 
+
+
+                                    <div className="col-md-12">
+                                    <h5 className="mb-2">Informações do Dono</h5>
+                                        <div className="form-group">
+                                            <input type="text" className="form-control" id="nomeAdotante" placeholder="Nome" />
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-6">
+                                        <div className="form-group"> 
+                                            <input type="text" className="form-control" placeholder='Email' id="email" />
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-3">
+                                        <div className="form-group"> 
+                                            <input type="text" className="form-control" placeholder='Telefone' id="contato" />
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-6">
+                                        <div className="form-group"> 
+                                            <input type="text" className="form-control" placeholder='Estado' id="estado" />
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-6">
+                                        <div className="form-group"> 
+                                            <input type="text" className="form-control" placeholder='Cidade' id="cidade" />
+                                        </div>
+                                    </div>
+
+
+
+
+                                    
 
                                     <div className="col-md-12">
                                         <div className="form-group">

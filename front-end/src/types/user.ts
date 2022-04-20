@@ -1,7 +1,9 @@
 export type Usuario ={
     id: number;
     nome: string;
-    local: string;
+    cidade: string;
+    estado: string;
     email: string;
+    contato: string;
 }
 

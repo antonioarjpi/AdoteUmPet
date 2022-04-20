@@ -1,6 +1,6 @@
 package com.devsimple.AdoteUmPet.controller;
 
-import com.devsimple.AdoteUmPet.dto.Adotar;
+import com.devsimple.AdoteUmPet.dto.CadastrarPetDTO;
 import com.devsimple.AdoteUmPet.model.Pets;
 import com.devsimple.AdoteUmPet.model.Usuario;
 import com.devsimple.AdoteUmPet.services.PetsService;
@@ -29,7 +29,7 @@ public class PetsController {
     }
 
     @PostMapping
-    public ResponseEntity<Pets> save(@RequestBody Pets pets){
+    public ResponseEntity<Pets> save(@RequestBody CadastrarPetDTO pets){
         return ResponseEntity.ok(petsService.save(pets));
     }
 

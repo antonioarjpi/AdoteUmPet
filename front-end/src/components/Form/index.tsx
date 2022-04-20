@@ -34,7 +34,10 @@ function FormCard( {petId } : Props){
 
         const nome = (event.target as any).nome.value;
         const email = (event.target as any).email.value;
-        const local = (event.target as any).local.value;
+        const cidade = (event.target as any).cidade.value;
+		const estado = (event.target as any).estado.value;
+		const contato = (event.target as any).contato.value;
+	
         
 
         const config: AxiosRequestConfig = {
@@ -44,7 +47,9 @@ function FormCard( {petId } : Props){
             data: {
                 nome: nome,
                 email: email,
-                local: local
+                cidade: cidade,
+				contato: contato,
+				estado: estado
               
             }
         }
@@ -69,7 +74,7 @@ function FormCard( {petId } : Props){
 						<div className="row no-gutters">
 							<div className="col-lg-6">
 								<div className="contact-wrap w-100 p-md-5 p-4">
-									<h3>Adotar o(a) {pet?.nome}</h3>
+									<h3>Informações de contato</h3>
 									<div id="form-message-warning" className="mb-4"></div> 
                                 <div id="form-message-success" className="mb-4">
                                 Your message was sent, thank you!
@@ -77,48 +82,96 @@ function FormCard( {petId } : Props){
 									<div className="row mb-4">
 										<div className="col-md-4">
 											<div className="dbox w-100 d-flex align-items-start">
-						        		<div className="text">
-							            <p><span>Cidade - UF:</span> {pet?.local}</p>
-							          </div>
-						            </div>
+						        				<div className="text">
+							            			<p><span>Nome do pet:</span> {pet?.nome} </p>
+							          			</div>
+						            		</div>
 										</div>
 
                                         <div className="col-md-4">
 											<div className="dbox w-100 d-flex align-items-start">
-						        		<div className="text">
-							            <p><span>Peso:</span> {pet?.peso} KG</p>
-							          </div>
-						          </div>
+						        				<div className="text">
+							            			<p><span>Peso:</span> {pet?.peso} KG</p>
+							          			</div>
+						          			</div>
+										</div>
+
+										<div className="col-md-4">
+											<div className="dbox w-100 d-flex align-items-start">
+						        				<div className="text">
+							            			<p><span>Raça:</span> {pet?.raca}</p>
+							          			</div>
+						          			</div>
+										</div>
+
+										<div className="col-md-4">
+											<div className="dbox w-100 d-flex align-items-start">
+						        				<div className="text">
+							            			<p><span>Nome do Dono:</span> {pet?.usuario.nome}</p>
+							          			</div>
+						          			</div>
+										</div>
+
+										<div className="col-md-6">
+											<div className="dbox w-100 d-flex align-items-start">
+						        				<div className="text">
+							            			<p><span>E-mail:</span> {pet?.usuario.email}</p>
+							          			</div>
+						          			</div>
 										</div>
 
                                         <div className="col-md-4">
 											<div className="dbox w-100 d-flex align-items-start">
-						        		<div className="text">
-							            <p><span>Raça:</span> {pet?.raca}</p>
-							          </div>
-						          </div>
+						        				<div className="text">
+							            			<p><span>Telefone:</span> {pet?.usuario.contato}</p>
+							          			</div>
+						          			</div>
 										</div>
 
+										<div className="col-md-6">
+											<div className="dbox w-100 d-flex align-items-start">
+						        				<div className="text">
+							            			<p><span>Cidade - UF:</span> {pet?.usuario.cidade} - {pet?.usuario.estado}</p>
+							          			</div>
+						            		</div>
+										</div>		
 									</div>
+
 									<form method="POST" id="contactForm" name="contactForm" className="contactForm" onSubmit={handleSubmit}>
 										<div className="row">
                                             
 											<div className="col-md-12">
-                                            <h5 className="mb-2">Suas Informações</h5>
+												<h5 className="mb-2">Preencha formulário abaixo para enviar a adoção</h5>
 												<div className="form-group">
 													<input type="text" className="form-control" name="nome" id="nome" placeholder="Nome" />
 												</div>
 											</div>
+											
 											<div className="col-md-12"> 
 												<div className="form-group">
 													<input type="email" className="form-control" name="email" id="email" placeholder="Email"/>
 												</div>
 											</div>
+
 											<div className="col-md-12">
 												<div className="form-group">
-													<input type="text" className="form-control" name="local" id="local" placeholder="Cidade, UF"/>
+													<input type="text" className="form-control" name="contato" id="contato" placeholder="Telefone"/>
 												</div>
 											</div>
+
+											<div className="col-md-12">
+												<div className="form-group">
+													<input type="text" className="form-control" name="cidade" id="cidade" placeholder="Cidade"/>
+												</div>
+											</div>
+
+											<div className="col-md-12">
+												<div className="form-group">
+													<input type="text" className="form-control" name="estado" id="estado" placeholder="Estado"/>
+												</div>
+											</div>
+
+
 											<div className="col-md-12">
 												<div className="form-group">
 													<input type="submit" value="Adotar" className="btn btn-primary mr-3"/>
@@ -137,7 +190,7 @@ function FormCard( {petId } : Props){
 								</div>
 							</div>
 							<div className="col-lg-6 d-flex align-items-stretch">
-								<img  src={pet?.imagem1} alt={pet?.nome} width={600} height={524}/>
+								<img  src={pet?.imagem} alt={pet?.nome} width={600} height={681}/>
 			                    
 							</div>
 						</div>

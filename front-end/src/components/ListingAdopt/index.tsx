@@ -2,13 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { PetsPage } from "../../types/pets";
 import { BASE_URL } from "../../utils/request";
-import Pagination from "../Pagination";
-import PetCard from "../PetCard";
 import PetCardAdopt from "../PetCardAdopt";
 
 function Listing(){
     
-    const [pageNumber, setPageNumber] = useState(0);
+    const [pageNumber] = useState(0);
 
     const [page, setPage] = useState<PetsPage>({
         content: [],
