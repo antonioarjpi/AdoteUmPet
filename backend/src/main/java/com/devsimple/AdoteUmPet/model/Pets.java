@@ -38,7 +38,6 @@ public class Pets {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    @JsonIgnore
     private Usuario usuario;
 
     @ManyToOne

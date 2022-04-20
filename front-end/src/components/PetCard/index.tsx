@@ -24,7 +24,7 @@ function PetCard( { pets } : Props){
                 </div>
         <div className="text-container">
             <h3>{pets.nome}</h3>
-            <h6>{pets.usuario.cidade}</h6>
+            <h6>{pets.usuario.cidade}, {pets.usuario.estado}</h6>
             <Link to={`/form/${pets.id}`}>
                 <a className="btn btn-primary pet-btn" href="#header">Quero Adotar</a>
             </Link>

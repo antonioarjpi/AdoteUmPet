@@ -79,18 +79,70 @@ function CardPet(){
 
                                     <div className="col-md-3">
                                         <div className="email">
-                                            <input type="text"  className="form-control"placeholder='Raça' id="raca" />
+                                            <select className='form-select' id="raca" required>
+                                                    <option disabled hidden selected>Raça</option>
+                                                        <option>	Vira-lata	 </option>
+                                                        <option>	Akita	 </option>
+                                                        <option>	Basset hound	 </option>
+                                                        <option>	Beagle	 </option>
+                                                        <option>	Bichon frisé	 </option>
+                                                        <option>	Boiadeiro australiano	 </option>
+                                                        <option>	Border collie	 </option>
+                                                        <option>	Boston terrier	 </option>
+                                                        <option>	Boxer	 </option>
+                                                        <option>	Buldogue francês	 </option>
+                                                        <option>	Buldogue inglês	 </option>
+                                                        <option>	Bull terrier	 </option>
+                                                        <option>	Cane corso	 </option>
+                                                        <option>	Cavalier king charles spaniel	 </option>
+                                                        <option>	Chihuahua	 </option>
+                                                        <option>	Chow chow	 </option>
+                                                        <option>	Cocker spaniel inglês	 </option>
+                                                        <option>	Dachshund	 </option>
+                                                        <option>	Dálmata	 </option>
+                                                        <option>	Doberman	 </option>
+                                                        <option>	Dogo argentino	 </option>
+                                                        <option>	Dogue alemão	 </option>
+                                                        <option>	Fila brasileiro	 </option>
+                                                        <option>	Golden retriever	 </option>
+                                                        <option>	Husky siberiano	 </option>
+                                                        <option>	Jack russell terrier	 </option>
+                                                        <option>	Labrador retriever	 </option>
+                                                        <option>	Lhasa apso	 </option>
+                                                        <option>	Lulu da pomerânia	 </option>
+                                                        <option>	Maltês	 </option>
+                                                        <option>	Mastiff inglês	 </option>
+                                                        <option>	Mastim tibetano	 </option>
+                                                        <option>	Pastor alemão	 </option>
+                                                        <option>	Pastor australiano	 </option>
+                                                        <option>	Pastor de Shetland	 </option>
+                                                        <option>	Pequinês	 </option>
+                                                        <option>	Pinscher	 </option>
+                                                        <option>	Pit bull	 </option>
+                                                        <option>	Poodle	 </option>
+                                                        <option>	Pug	 </option>
+                                                        <option>	Rottweiler	 </option>
+                                                        <option>	Schnauzer	 </option>
+                                                        <option>	Shar-pei	 </option>
+                                                        <option>	Shiba	 </option>
+                                                        <option>	Shih tzu	 </option>
+                                                        <option>	Staffordshire bull terrier	 </option>
+                                                        <option>	Weimaraner	 </option>
+                                                        <option>	Yorkshire	 </option>
+
+                                                </select>
+
+
+                                            
                                         </div>
                                     </div>
 
                                     <div className="col-md-2">
                                         <div className="form-group">
-                                            <label htmlFor="tipo"></label>
-                                            <select placeholder="Subject line" id="tipo" required>
+                                            <select className='form-select' id="tipo" required>
                                                 <option disabled hidden selected>Espécie</option>
                                                 <option>Gato</option>
                                                 <option>Cachorro</option>
-                                            
                                             </select>
                                         </div>
                                     </div>
@@ -115,29 +167,61 @@ function CardPet(){
                                         </div>
                                     </div>
 
-                                    <div className="col-md-6">
+                                    <div className="col-md-5">
                                         <div className="form-group"> 
                                             <input type="text" className="form-control" placeholder='Email' id="email" />
                                         </div>
                                     </div>
 
-                                    <div className="col-md-3">
+                                    <div className="col-md-2">
                                         <div className="form-group"> 
                                             <input type="text" className="form-control" placeholder='Telefone' id="contato" />
                                         </div>
                                     </div>
 
-                                    <div className="col-md-6">
-                                        <div className="form-group"> 
-                                            <input type="text" className="form-control" placeholder='Estado' id="estado" />
-                                        </div>
-                                    </div>
-
-                                    <div className="col-md-6">
+                                    <div className="col-md-2">
                                         <div className="form-group"> 
                                             <input type="text" className="form-control" placeholder='Cidade' id="cidade" />
                                         </div>
                                     </div>
+
+                                   
+                                    <div className="col-md-1">
+                                        <div className="form-group" >
+                                            <select className='form-select' id="estado" required>
+                                                <option disabled hidden selected>UF</option>
+                                                <option value="AC">Acre</option>
+                                                <option value="AL">Alagoas</option>
+                                                <option value="AP">Amapá</option>
+                                                <option value="AM">Amazonas</option>
+                                                <option value="BA">Bahia</option>
+                                                <option value="CE">Ceará</option>
+                                                <option value="DF">Distrito Federal</option>
+                                                <option value="ES">Espírito Santo</option>
+                                                <option value="GO">Goiás</option>
+                                                <option value="MA">Maranhão</option>
+                                                <option value="MT">Mato Grosso</option>
+                                                <option value="MS">Mato Grosso do Sul</option>
+                                                <option value="MG">Minas Gerais</option>
+                                                <option value="PA">Pará</option>
+                                                <option value="PB">Paraíba</option>
+                                                <option value="PR">Paraná</option>
+                                                <option value="PE">Pernambuco</option>
+                                                <option value="PI">Piauí</option>
+                                                <option value="RJ">Rio de Janeiro</option>
+                                                <option value="RN">Rio Grande do Norte</option>
+                                                <option value="RS">Rio Grande do Sul</option>
+                                                <option value="RO">Rondônia</option>
+                                                <option value="RR">Roraima</option>
+                                                <option value="SC">Santa Catarina</option>
+                                                <option value="SP">São Paulo</option>
+                                                <option value="SE">Sergipe</option>
+                                                <option value="TO">Tocantins</option>    
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    
 
 
 

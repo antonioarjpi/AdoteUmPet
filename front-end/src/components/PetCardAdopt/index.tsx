@@ -20,7 +20,7 @@ function PetCardAdopt( { pets } : Props){
                         <img src={pets.imagem} alt="images" />
                     </div>
                     <div className="details">
-                        <h2>{pets.nome}<br /><span>{pets.usuario.cidade}</span></h2>
+                        <h2>{pets.nome}<br /><span>{pets.usuario.cidade}, {pets.usuario.estado}</span></h2>
                     </div>
                 </div>
             

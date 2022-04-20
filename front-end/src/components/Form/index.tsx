@@ -1,7 +1,6 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { url } from 'inspector';
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Pets } from '../../types/pets';
 import { BASE_URL } from '../../utils/request';
 
@@ -104,7 +103,7 @@ function FormCard( {petId } : Props){
 						          			</div>
 										</div>
 
-										<div className="col-md-4">
+										<div className="col-md-12">
 											<div className="dbox w-100 d-flex align-items-start">
 						        				<div className="text">
 							            			<p><span>Nome do Dono:</span> {pet?.usuario.nome}</p>
@@ -128,7 +127,7 @@ function FormCard( {petId } : Props){
 						          			</div>
 										</div>
 
-										<div className="col-md-6">
+										<div className="col-md-12">
 											<div className="dbox w-100 d-flex align-items-start">
 						        				<div className="text">
 							            			<p><span>Cidade - UF:</span> {pet?.usuario.cidade} - {pet?.usuario.estado}</p>
@@ -159,15 +158,44 @@ function FormCard( {petId } : Props){
 												</div>
 											</div>
 
-											<div className="col-md-12">
+											<div className="col-md-8">
 												<div className="form-group">
 													<input type="text" className="form-control" name="cidade" id="cidade" placeholder="Cidade"/>
 												</div>
 											</div>
 
-											<div className="col-md-12">
-												<div className="form-group">
-													<input type="text" className="form-control" name="estado" id="estado" placeholder="Estado"/>
+											<div className="col-md-4">
+												<div className="form-group" >
+													<select className='form-select' id="estado" required>
+														<option disabled hidden selected>UF</option>
+														<option value="AC">Acre</option>
+														<option value="AL">Alagoas</option>
+														<option value="AP">Amapá</option>
+														<option value="AM">Amazonas</option>
+														<option value="BA">Bahia</option>
+														<option value="CE">Ceará</option>
+														<option value="DF">Distrito Federal</option>
+														<option value="ES">Espírito Santo</option>
+														<option value="GO">Goiás</option>
+														<option value="MA">Maranhão</option>
+														<option value="MT">Mato Grosso</option>
+														<option value="MS">Mato Grosso do Sul</option>
+														<option value="MG">Minas Gerais</option>
+														<option value="PA">Pará</option>
+														<option value="PB">Paraíba</option>
+														<option value="PR">Paraná</option>
+														<option value="PE">Pernambuco</option>
+														<option value="PI">Piauí</option>
+														<option value="RJ">Rio de Janeiro</option>
+														<option value="RN">Rio Grande do Norte</option>
+														<option value="RS">Rio Grande do Sul</option>
+														<option value="RO">Rondônia</option>
+														<option value="RR">Roraima</option>
+														<option value="SC">Santa Catarina</option>
+														<option value="SP">São Paulo</option>
+														<option value="SE">Sergipe</option>
+														<option value="TO">Tocantins</option>    
+													</select>
 												</div>
 											</div>
 
@@ -190,7 +218,7 @@ function FormCard( {petId } : Props){
 								</div>
 							</div>
 							<div className="col-lg-6 d-flex align-items-stretch">
-								<img  src={pet?.imagem} alt={pet?.nome} width={600} height={681}/>
+								<img className='pets' src={pet?.imagem} alt={pet?.nome} />
 			                    
 							</div>
 						</div>
