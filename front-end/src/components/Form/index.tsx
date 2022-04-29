@@ -4,10 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Pets } from '../../types/pets';
 import { BASE_URL } from '../../utils/request';
 
-
 import "../Form/styles.css"
-
-
 
 
 type Props = {
@@ -75,7 +72,7 @@ function FormCard( {petId } : Props){
 						<div className="row no-gutters">
 							<div className="col-lg-6">
 								<div className="contact-wrap w-100 p-md-5 p-4">
-									<h3>Informações de phone</h3>
+									<h3>Informações do {pet?.name}</h3>
 									<div id="form-message-warning" className="mb-4"></div> 
                                 <div id="form-message-success" className="mb-4">
                                 Your message was sent, thank you!
