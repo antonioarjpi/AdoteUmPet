@@ -12,20 +12,16 @@ function About(){
 
                 <div className="column">
                 <div className="center">
-                    <div className="property-card">
-                        <a href="#">
+                    <div className="property-card">       
                         <div className="property-image">
                             <div className="property-image-title">
-                            
+                     
                             </div>
-                        </div></a>
+                        </div>
                         <div className="property-description">
                         <h5> Antônio </h5>
                         <p>Desenvolvedor full-stack Java/React na AdoteUmPet.</p>
                         </div>
-                        <a href="#">
-            
-                        </a>
                     </div>
                     </div>
                 </div>
@@ -33,19 +29,15 @@ function About(){
                 <div className="column">
                     <div className="center">
                     <div className="property-card">
-                        <a href="#">
+                
                         <div className="property-image-carla">
                             <div className="property-image-title-carla">
-                            
                             </div>
-                        </div></a>
+                        </div>
                         <div className="property-description">
                         <h5> Carla </h5>
                         <p>CEO e diretora do AdoteUmPet.</p>
                         </div>
-                        <a href="#">
-        
-                        </a>
                     </div>
                     </div>
                 </div>
@@ -53,19 +45,15 @@ function About(){
                 <div className="column">
                 <div className="center">
                     <div className="property-card">
-                        <a href="#">
                         <div className="property-image-matheus">
                             <div className="property-image-title-matheus">
-                            
+                    
                             </div>
-                        </div></a>
+                        </div>
                         <div className="property-description">
                         <h5> Matheus </h5>
                         <p>Gerente de projeto e analista de dados da AdoteUmPet.</p>
                         </div>
-                        <a href="#">
-               
-                        </a>
                     </div>
                     </div>
                 </div>

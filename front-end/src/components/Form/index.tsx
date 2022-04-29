@@ -72,7 +72,7 @@ function FormCard( {petId } : Props){
 						<div className="row no-gutters">
 							<div className="col-lg-6">
 								<div className="contact-wrap w-100 p-md-5 p-4">
-									<h3>Informações do {pet?.name}</h3>
+									<h3>Informações do(a) {pet?.name}</h3>
 									<div id="form-message-warning" className="mb-4"></div> 
                                 <div id="form-message-success" className="mb-4">
                                 Your message was sent, thank you!
