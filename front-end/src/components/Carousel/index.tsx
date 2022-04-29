@@ -3,7 +3,6 @@ import "./styles.css"
 import Img1 from '../../assets/img1.jpg'
 import Img2 from '../../assets/img2.gif'
 import Img3 from '../../assets/img3.gif'
-import Logo from '../../assets/AdoteUmPet.png'
 
 function Carousel (){
     return(
@@ -35,8 +34,6 @@ function Carousel (){
                 <span className="sr-only">Next</span>
             </a>
             </div>    
-
-
         </div>
 
     )

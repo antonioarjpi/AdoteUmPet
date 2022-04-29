@@ -1,14 +1,15 @@
-import { Usuario } from './user';
+import { User } from './user';
 
 export type Pets = {
     id: number;
-    nome: string;
-    tipo: string;
-    peso: number;
-    raca: string;
-    imagem: string;
-    adotado: boolean;
-    usuario: Usuario;
+    name: string;
+    species: string;
+    weight: number;
+    breed: string;
+    image: string;
+    adopted: boolean;
+    user: User;
+    adopter: User;
 }
 
 export type PetsPage = {

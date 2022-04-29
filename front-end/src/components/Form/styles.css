@@ -8137,13 +8137,7 @@
 	  color: inherit;
 	  border-color: #dee2e6; } }
   
-  body {
-	font-family: "Poppins", Arial, sans-serif;
-	font-size: 14px;
-	line-height: 1.8;
-	font-weight: normal;
-	background: #f4f4f4;
-	color: #666666; }
+
   
   a {
 	-webkit-transition: .3s all ease;

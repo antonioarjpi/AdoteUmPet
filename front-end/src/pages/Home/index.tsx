@@ -1,5 +1,4 @@
 
-import { Link } from "react-router-dom";
 import Carousel from "../../components/Carousel";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/NavBar";
@@ -11,10 +10,9 @@ function Home(){
     return(
         <>
             <Navbar />
-            <Carousel />
             <Paralax />
+            <Carousel />
             <Pets />        
-
             <Parceiros />
             <Footer />
         </>

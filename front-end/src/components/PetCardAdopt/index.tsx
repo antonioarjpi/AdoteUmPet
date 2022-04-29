@@ -13,21 +13,15 @@ function PetCardAdopt( { pets } : Props){
     }
 
     return(
-        <article>
-            <div className="box">
-                <div className="card">
-                    <div className="imgBx">
-                        <img src={pets.imagem} alt="images" />
-                    </div>
-                    <div className="details">
-                        <h2>{pets.nome}<br /><span>{pets.usuario.cidade}, {pets.usuario.estado}</span></h2>
-                    </div>
-                </div>
-            
+        <div className="card">
+            <div className="imgBx">
+                <img src={pets.image} alt="images" />
             </div>
-            </article>
-    
-     
+            <div className="details">
+                <h2>{pets.name}
+                <br /><span>{pets.adopter.firstName} está cuidando! </span></h2>
+            </div>
+        </div>
     )
 }
 

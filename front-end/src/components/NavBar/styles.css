@@ -3,9 +3,36 @@
     margin-right: 3.0rem;
 }
 
-.nav-link a{
+.nav-link button{
     align-items: center;
     justify-content: center;
     text-align: center;
    
+}
+
+.bg{
+    background-color: #fff;
+    background-position: 0% 0%;
+    color:  #4D5156;
+}
+
+.navbar{
+    transform: none;
+    transition: opacity 0.3s ease 0s;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 9px 0px;
+
+display: block;
+z-index: 1001;
+}
+
+.navbar-expand-md .navbar-toggler{
+    background-color: #ffc107c2;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 9px 0px;
+}
+
+.navbar-toggler-icon{
+    color: #23195e;
+    background-color: #4D5156;
 }

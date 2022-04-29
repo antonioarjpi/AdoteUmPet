@@ -1,6 +1,6 @@
 package com.devsimple.AdoteUmPet.services;
 
-import com.devsimple.AdoteUmPet.model.Usuario;
+import com.devsimple.AdoteUmPet.model.Nick;
 import com.devsimple.AdoteUmPet.repository.UsuarioRepository;
 import com.devsimple.AdoteUmPet.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,25 +10,25 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class UsuarioService {
+public class UserService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
 
     @Transactional
-    public Usuario search(Long id){
+    public Nick search(Long id){
         return usuarioRepository.findById(id)
-                .orElseThrow(() -> new ObjectNotFoundException("Usuário não encontrado!"));
+                .orElseThrow(() -> new ObjectNotFoundException("User not found!"));
     }
 
     @Transactional
-    public List<Usuario> listAll(){
+    public List<Nick> listAll(){
         return usuarioRepository.findAll();
     }
 
     @Transactional
-    public Usuario save(Usuario usuario){
-        return usuarioRepository.save(usuario);
+    public Nick save(Nick user){
+        return usuarioRepository.save(user);
     }
 
     @Transactional

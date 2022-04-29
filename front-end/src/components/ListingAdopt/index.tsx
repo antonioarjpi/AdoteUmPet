@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 import { PetsPage } from "../../types/pets";
 import { BASE_URL } from "../../utils/request";
+import Pagination from "../Pagination";
 import PetCardAdopt from "../PetCardAdopt";
 
-function Listing(){
+function ListingAdopt(){
     
-    const [pageNumber] = useState(0);
+    const [pageNumber, setPageNumber] = useState(0);
 
     const [page, setPage] = useState<PetsPage>({
         content: [],
@@ -21,7 +23,7 @@ function Listing(){
     })
     
     useEffect(() => {
-        axios.get(`${BASE_URL}/pets?size=10`)
+        axios.get(`${BASE_URL}/pets/search?adopted=true&size=3&page=${pageNumber}`)
         .then(response => {
             const data = response.data as PetsPage;
             setPage(data);
@@ -29,29 +31,26 @@ function Listing(){
         })
     }, [pageNumber]); 
 
+    const handlePageChange = (newPageNumber : number ) => {
+        setPageNumber(newPageNumber);
+    }
+
+
     
     return(
         <>      
-            <br/><br/><br/><br/><br/>
-            <div className="container">
-                <div className="row">
-                    {page.content.map(pets => (
-                        <>
-                        {pets.adotado === true ?(
-                            <div key={pets.id} className="col-sm-6 col-lg-4 col-xl-4 mb-3">
-                                <PetCardAdopt pets={pets} />
-                            </div>    
-                        ):(
-                            <></>
-                        )    
-                }
-                        </>
+            <Pagination page={page} onChange={handlePageChange}/>
+            
+                {page.content.map(pets => (
+                    <div key={pets.id} className="col-sm-6 col-lg-4 col-xl-4 mb-3 align-middle">
+                        <PetCardAdopt pets={pets} />
+                    </div>   
                     ))}
-                </div>
-            </div>           
+                
+                        
         </>
 
     )
 }
 
-export default Listing;
+export default ListingAdopt;

@@ -1,6 +1,7 @@
 .pets-pagination-container {
     padding: 15px 0;
     display: flex;
+    justify-content: center;
 
 }
 
@@ -53,12 +54,9 @@
 }
 
 .pets-pagination-container p {
-    color: #fff;
+    color: rgb(87, 85, 85);
     margin: 0;
     font-size: 12px;
     
 }
 
-.pets-flip-horizontal {
-    transform: rotate(180deg);
-}

@@ -12,17 +12,18 @@ function CardPet(){
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const nome = (event.target as any).nome.value;
-        const tipo = (event.target as any).tipo.value;
-        const peso = (event.target as any).peso.value;
-        const raca = (event.target as any).raca.value;
-        const imagem = (event.target as any).imagem.value;
+        const name = (event.target as any).name.value;
+        const species = (event.target as any).species.value;
+        const weight = (event.target as any).weight.value;
+        const breed = (event.target as any).breed.value;
+        const image = (event.target as any).image.value;
 
-        const cidade = (event.target as any).cidade.value;
-        const estado = (event.target as any).estado.value;
-        const nomeAdotante = (event.target as any).nomeAdotante.value;
+        const city = (event.target as any).city.value;
+        const state = (event.target as any).state.value;
+        const firstAdopter = (event.target as any).firstAdopter.value;
+        const lastAdopter = (event.target as any).lastAdopter.value;
         const email = (event.target as any).email.value;
-        const contato = (event.target as any).contato.value;
+        const phone = (event.target as any).phone.value;
   
 
         const config: AxiosRequestConfig = {
@@ -30,16 +31,17 @@ function CardPet(){
             method: 'POST',
             url: '/pets',
             data: {
-                nome: nome,
-                tipo: tipo,
-                peso: peso,
-                raca: raca,
-                imagem: imagem,
-                cidade: cidade,
-                estado: estado,
+                name: name,
+                species: species,
+                weight: weight,
+                breed: breed,
+                image: image,
+                city: city,
+                state: state,
 
-                nomeAdotante: nomeAdotante,
-                contato: contato,
+                firstAdopter: firstAdopter,
+                lastAdopter: lastAdopter,
+                phone: phone,
                 email: email
             }
         }
@@ -73,13 +75,13 @@ function CardPet(){
                                     <div className="col-md-12">
                                     <h5 className="mb-2">Informações do pet</h5>
                                         <div className="form-group">
-                                            <input type="text" className="form-control" name="nome" id="nome" placeholder="Nome" />
+                                            <input type="text" className="form-control" name="name" id="name" placeholder="Nome" />
                                         </div>
                                     </div>
 
                                     <div className="col-md-3">
                                         <div className="email">
-                                            <select className='form-select' id="raca" required>
+                                            <select className='form-select' id="breed" required>
                                                     <option disabled hidden selected>Raça</option>
                                                         <option>	Vira-lata	 </option>
                                                         <option>	Akita	 </option>
@@ -139,7 +141,7 @@ function CardPet(){
 
                                     <div className="col-md-2">
                                         <div className="form-group">
-                                            <select className='form-select' id="tipo" required>
+                                            <select className='form-select' id="species" required>
                                                 <option disabled hidden selected>Espécie</option>
                                                 <option>Gato</option>
                                                 <option>Cachorro</option>
@@ -149,25 +151,29 @@ function CardPet(){
 
                                     <div className="col-md-2">
                                         <div className="form-group">
-                                            <input type="text" className="form-control" placeholder='Peso' id="peso" />
+                                            <input type="text" className="form-control" placeholder='Peso' id="weight" />
                                         </div>
                                     </div>
 
                                     <div className="form-group">
-                                        <input type="text" className="form-control" placeholder='Link da Imagem' id="imagem" />
+                                        <input type="text" className="form-control" placeholder='Link da Imagem' id="image" />
                                     </div>
 
-
-
-
-                                    <div className="col-md-12">
                                     <h5 className="mb-2">Informações do Dono</h5>
+
+                                    <div className="col-md-4">
                                         <div className="form-group">
-                                            <input type="text" className="form-control" id="nomeAdotante" placeholder="Nome" />
+                                            <input type="text" className="form-control" id="firstAdopter" placeholder="Primeiro Nome" />
                                         </div>
                                     </div>
 
-                                    <div className="col-md-5">
+                                    <div className="col-md-8">
+                                        <div className="form-group">
+                                            <input type="text" className="form-control" id="lastAdopter" placeholder="Sobrenome" />
+                                        </div>
+                                    </div>
+
+                                    <div className="col-md-4">
                                         <div className="form-group"> 
                                             <input type="text" className="form-control" placeholder='Email' id="email" />
                                         </div>
@@ -175,20 +181,20 @@ function CardPet(){
 
                                     <div className="col-md-2">
                                         <div className="form-group"> 
-                                            <input type="text" className="form-control" placeholder='Telefone' id="contato" />
+                                            <input type="text" className="form-control" placeholder='Telefone' id="phone" />
                                         </div>
                                     </div>
 
                                     <div className="col-md-2">
                                         <div className="form-group"> 
-                                            <input type="text" className="form-control" placeholder='Cidade' id="cidade" />
+                                            <input type="text" className="form-control" placeholder='Cidade' id="city" />
                                         </div>
                                     </div>
 
                                    
-                                    <div className="col-md-1">
+                                    <div className="col-md-4">
                                         <div className="form-group" >
-                                            <select className='form-select' id="estado" required>
+                                            <select className='form-select' id="state" required>
                                                 <option disabled hidden selected>UF</option>
                                                 <option value="AC">Acre</option>
                                                 <option value="AL">Alagoas</option>

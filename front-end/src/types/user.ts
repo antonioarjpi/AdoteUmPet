@@ -1,9 +1,10 @@
-export type Usuario ={
+export type User ={
     id: number;
-    nome: string;
-    cidade: string;
-    estado: string;
+    firstName: string;
+    lastName: string;
+    city: string;
+    state: string;
     email: string;
-    contato: string;
+    phone: string;
 }
 

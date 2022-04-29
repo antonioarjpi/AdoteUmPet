@@ -1,13 +1,12 @@
 package com.devsimple.AdoteUmPet.services;
 
-import com.devsimple.AdoteUmPet.dto.CadastrarPetDTO;
+import com.devsimple.AdoteUmPet.dto.RegisterPetDTO;
+import com.devsimple.AdoteUmPet.model.Nick;
 import com.devsimple.AdoteUmPet.model.Pets;
-import com.devsimple.AdoteUmPet.model.Usuario;
 import com.devsimple.AdoteUmPet.repository.PetsRepository;
 import com.devsimple.AdoteUmPet.repository.UsuarioRepository;
 import com.devsimple.AdoteUmPet.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -20,7 +19,7 @@ public class PetsService {
     private PetsRepository petsRepository;
 
     @Autowired
-    private UsuarioService usuarioService;
+    private UserService usuarioService;
 
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -28,7 +27,7 @@ public class PetsService {
     @Transactional
     public Pets search(Long id){
         return petsRepository.findById(id)
-                .orElseThrow(() -> new ObjectNotFoundException("Pet não encontrado!"));
+                .orElseThrow(() -> new ObjectNotFoundException("Pet not found!"));
     }
 
     @Transactional
@@ -37,51 +36,53 @@ public class PetsService {
     }
 
     @Transactional
-    public Pets save(CadastrarPetDTO petDTO){
-        Pets pets = new Pets(null, petDTO.getNome(), petDTO.getTipo(),  petDTO.getRaca(), petDTO.getPeso(), petDTO.getImagem());
+    public Page<Pets> listAdopted(Boolean adopted, Pageable pageable){
+        return petsRepository.findByAdopted(adopted, pageable);
+    }
 
-        Usuario user = usuarioRepository.findByEmail(petDTO.getEmail());
+    @Transactional
+    public Pets save(RegisterPetDTO petDTO){
+        Pets pets = new Pets(null, petDTO.getName(), petDTO.getSpecies(),  petDTO.getBreed(),
+                petDTO.getWeight(), petDTO.getImage(), petDTO.isAdopted());
 
-        if (user == null){
-            Usuario usuario = new Usuario(null, petDTO.getNomeAdotante(), petDTO.getContato(), petDTO.getCidade(),
-                    petDTO.getEstado(), petDTO.getEmail());
-            pets.setUsuario(usuario);
-            usuario = usuarioService.save(usuario);
-            pets = petsRepository.save(pets);
+        Nick nick = usuarioRepository.findByEmail(petDTO.getEmail());
 
+        if (nick == null){
+            Nick user = new Nick(null, petDTO.getFirstAdopter(), petDTO.getLastAdopter(), petDTO.getPhone(), petDTO.getCity(),
+                    petDTO.getState(), petDTO.getEmail());
+            pets.setUser(user);
+            user = usuarioService.save(user);
         }else{
-            pets.setUsuario(user);
-            pets = petsRepository.save(pets);
+            pets.setUser(nick);
         }
+        pets = petsRepository.save(pets);
         return pets;
     }
 
     @Transactional
-    public Pets adopt(Usuario usuario, Long PetId){
+    public Pets adopt(Nick usuario, Long PetId){
         Pets pets = search(PetId);
-        Usuario user = usuarioRepository.findByEmail(usuario.getEmail());
+        Nick user = usuarioRepository.findByEmail(usuario.getEmail());
         if (user == null){
-            user = new Usuario();
+            user = new Nick();
             user.setEmail(usuario.getEmail());
-            user.setNome(usuario.getNome());
-            user.setEstado(usuario.getEstado());
-            user.setCidade(usuario.getCidade());
-            user.setContato(usuario.getContato());
+            user.setFirstName(usuario.getFirstName());
+            user.setLastName(usuario.getLastName());
+            user.setState(usuario.getState());
+            user.setCity(usuario.getCity());
+            user.setPhone(usuario.getPhone());
 
             user = usuarioRepository.save(user);
         }
-        pets.setAdotado(true);
-        pets.setAdotante(user);
+        pets.setAdopted(true);
+        pets.setAdopter(user);
 
         return petsRepository.save(pets);
     }
 
     @Transactional
     public void delete(Long id){
-        try{
-            petsRepository.deleteById(id);
-        }catch (EmptyResultDataAccessException e){
-            throw new ObjectNotFoundException("Pet não encontrado");
-        }
+        search(id);
+        petsRepository.deleteById(id);
     }
 }

@@ -31,11 +31,12 @@ function FormCard( {petId } : Props){
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const nome = (event.target as any).nome.value;
+        const firstName = (event.target as any).firstName.value;
+		const lastName = (event.target as any).lastName.value;
         const email = (event.target as any).email.value;
-        const cidade = (event.target as any).cidade.value;
-		const estado = (event.target as any).estado.value;
-		const contato = (event.target as any).contato.value;
+        const city = (event.target as any).city.value;
+		const state = (event.target as any).state.value;
+		const phone = (event.target as any).phone.value;
 	
         
 
@@ -44,11 +45,12 @@ function FormCard( {petId } : Props){
             method: 'PUT',
             url: '/pets/usuario/adotar/'+petId,
             data: {
-                nome: nome,
+                firstName: firstName,
+				lastName: lastName,
                 email: email,
-                cidade: cidade,
-				contato: contato,
-				estado: estado
+                city: city,
+				phone: phone,
+				state: state
               
             }
         }
@@ -73,7 +75,7 @@ function FormCard( {petId } : Props){
 						<div className="row no-gutters">
 							<div className="col-lg-6">
 								<div className="contact-wrap w-100 p-md-5 p-4">
-									<h3>Informações de contato</h3>
+									<h3>Informações de phone</h3>
 									<div id="form-message-warning" className="mb-4"></div> 
                                 <div id="form-message-success" className="mb-4">
                                 Your message was sent, thank you!
@@ -82,7 +84,7 @@ function FormCard( {petId } : Props){
 										<div className="col-md-4">
 											<div className="dbox w-100 d-flex align-items-start">
 						        				<div className="text">
-							            			<p><span>Nome do pet:</span> {pet?.nome} </p>
+							            			<p><span>Nome do pet:</span> {pet?.name} </p>
 							          			</div>
 						            		</div>
 										</div>
@@ -90,7 +92,7 @@ function FormCard( {petId } : Props){
                                         <div className="col-md-4">
 											<div className="dbox w-100 d-flex align-items-start">
 						        				<div className="text">
-							            			<p><span>Peso:</span> {pet?.peso} KG</p>
+							            			<p><span>Peso:</span> {pet?.weight} KG</p>
 							          			</div>
 						          			</div>
 										</div>
@@ -98,15 +100,15 @@ function FormCard( {petId } : Props){
 										<div className="col-md-4">
 											<div className="dbox w-100 d-flex align-items-start">
 						        				<div className="text">
-							            			<p><span>Raça:</span> {pet?.raca}</p>
+							            			<p><span>Raça:</span> {pet?.breed}</p>
 							          			</div>
 						          			</div>
 										</div>
 
-										<div className="col-md-12">
+										<div className="col-md-4">
 											<div className="dbox w-100 d-flex align-items-start">
 						        				<div className="text">
-							            			<p><span>Nome do Dono:</span> {pet?.usuario.nome}</p>
+							            			<p><span>Nome do Dono:</span> {pet?.user.firstName}</p>
 							          			</div>
 						          			</div>
 										</div>
@@ -114,7 +116,7 @@ function FormCard( {petId } : Props){
 										<div className="col-md-6">
 											<div className="dbox w-100 d-flex align-items-start">
 						        				<div className="text">
-							            			<p><span>E-mail:</span> {pet?.usuario.email}</p>
+							            			<p><span>E-mail:</span> {pet?.user.email}</p>
 							          			</div>
 						          			</div>
 										</div>
@@ -122,15 +124,15 @@ function FormCard( {petId } : Props){
                                         <div className="col-md-4">
 											<div className="dbox w-100 d-flex align-items-start">
 						        				<div className="text">
-							            			<p><span>Telefone:</span> {pet?.usuario.contato}</p>
+							            			<p><span>Telefone:</span> {pet?.user.phone}</p>
 							          			</div>
 						          			</div>
 										</div>
 
-										<div className="col-md-12">
+										<div className="col-md-4">
 											<div className="dbox w-100 d-flex align-items-start">
 						        				<div className="text">
-							            			<p><span>Cidade - UF:</span> {pet?.usuario.cidade} - {pet?.usuario.estado}</p>
+							            			<p><span>Cidade - UF:</span> {pet?.user.city} - {pet?.user.state}</p>
 							          			</div>
 						            		</div>
 										</div>		
@@ -142,9 +144,15 @@ function FormCard( {petId } : Props){
 											<div className="col-md-12">
 												<h5 className="mb-2">Preencha formulário abaixo para enviar a adoção</h5>
 												<div className="form-group">
-													<input type="text" className="form-control" name="nome" id="nome" placeholder="Nome" />
+													<input type="text" className="form-control" name="firstName" id="firstName" placeholder="Primeiro Nome" />
 												</div>
 											</div>
+											<div className="col-md-12">
+												<div className="form-group">
+													<input type="text" className="form-control" name="lastName" id="lastName" placeholder="Sobrenome" />
+												</div>
+											</div>
+											
 											
 											<div className="col-md-12"> 
 												<div className="form-group">
@@ -154,19 +162,19 @@ function FormCard( {petId } : Props){
 
 											<div className="col-md-12">
 												<div className="form-group">
-													<input type="text" className="form-control" name="contato" id="contato" placeholder="Telefone"/>
+													<input type="text" className="form-control" name="phone" id="phone" placeholder="Telefone"/>
 												</div>
 											</div>
 
 											<div className="col-md-8">
 												<div className="form-group">
-													<input type="text" className="form-control" name="cidade" id="cidade" placeholder="Cidade"/>
+													<input type="text" className="form-control" name="city" id="city" placeholder="Cidade"/>
 												</div>
 											</div>
 
 											<div className="col-md-4">
 												<div className="form-group" >
-													<select className='form-select' id="estado" required>
+													<select className='form-select' id="state" required>
 														<option disabled hidden selected>UF</option>
 														<option value="AC">Acre</option>
 														<option value="AL">Alagoas</option>
@@ -218,7 +226,7 @@ function FormCard( {petId } : Props){
 								</div>
 							</div>
 							<div className="col-lg-6 d-flex align-items-stretch">
-								<img className='pets' src={pet?.imagem} alt={pet?.nome} />
+								<img className='pets' src={pet?.image} alt={pet?.name} />
 			                    
 							</div>
 						</div>

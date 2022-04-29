@@ -3,13 +3,20 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     width: 100%;
-    height: 80%;
-    opacity: 0.6;
+    height: 90%;
+    opacity: 0.8;
     background-position: center top;
     display: grid;
     align-items: center;
-    background-size: cover;
-  
+    background-size: 100% 100%;
+}
+
+
+
+.fa-grin-wink{
+    color: #f3d342;
+    background-color: #9c5900;
+    border-radius: 60%;
 }
 
 .title{
@@ -18,10 +25,10 @@
     text-decoration: none solid rgb(218, 84, 84);
     text-align: center;
     word-spacing: 0px;
-    color:  #000000;
-    margin-top: 5.0rem;
+    color:  #f0e9e9;
+    text-shadow: black 0.1em 0.1em 0.3em;
+    margin-top: 13.0rem;
 }
-
 
 .sub-title{
     font-size: 45px;
@@ -29,6 +36,7 @@
     text-align: center;
     word-spacing: 0px;
     background-position: 0% 0%;
-    color:  #000000;
+    color:  #f0e9e9;
     margin-bottom: 10.1rem;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }

@@ -1,15 +1,1 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-.mt{
-  margin-top: 100px;
-}
-
-html {
-  font-family: 'Montserrat', Arial, sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  background: #F9F6F3;
-}

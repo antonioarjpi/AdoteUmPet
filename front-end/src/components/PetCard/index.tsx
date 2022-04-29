@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Pets } from "../../types/pets";
-import './styles.css'
+import '../PetCard/styles.css'
 
 type Props = {
     pets: Pets;
@@ -18,13 +18,13 @@ function PetCard( { pets } : Props){
             <div className="img-container">
                 <div className="img-inner">
                     <div className="inner-skew">
-                        <img src={pets.imagem} alt={pets.nome} />
+                        <img src={pets.image} alt={pets.name} />
                         </div>
                     </div>
                 </div>
         <div className="text-container">
-            <h3>{pets.nome}</h3>
-            <h6>{pets.usuario.cidade}, {pets.usuario.estado}</h6>
+            <h3>{pets.name}</h3>
+            <h6>{pets.user.city}, {pets.user.state}</h6>
             <Link to={`/form/${pets.id}`}>
                 <a className="btn btn-primary pet-btn" href="#header">Quero Adotar</a>
             </Link>
