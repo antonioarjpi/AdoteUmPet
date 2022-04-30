@@ -6,7 +6,7 @@ import Img3 from '../../assets/img3.gif'
 
 function Carousel (){
     return(
-        <div className="container rm">
+        <div className="rm">
 
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
