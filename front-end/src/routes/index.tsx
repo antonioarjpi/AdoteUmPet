@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom"
-import Home from "../../pages/Home";
-import AddPet from "../../pages/AddPet";
-import Form from "../../pages/Form";
+import Home from "../pages/Home";
+import AddPet from "../pages/AddPet";
+import Form from "../pages/Form";
+
 
 export const Router = () =>{
     return(
