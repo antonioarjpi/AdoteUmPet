@@ -1,7 +1,7 @@
 package com.devsimple.AdoteUmPet.services;
 
 import com.devsimple.AdoteUmPet.model.Nick;
-import com.devsimple.AdoteUmPet.repository.UsuarioRepository;
+import com.devsimple.AdoteUmPet.repository.NickRepository;
 import com.devsimple.AdoteUmPet.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ import java.util.List;
 public class UserService {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private NickRepository usuarioRepository;
 
     @Transactional
     public Nick search(Long id){

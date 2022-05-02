@@ -4,7 +4,7 @@ import com.devsimple.AdoteUmPet.dto.RegisterPetDTO;
 import com.devsimple.AdoteUmPet.model.Nick;
 import com.devsimple.AdoteUmPet.model.Pets;
 import com.devsimple.AdoteUmPet.repository.PetsRepository;
-import com.devsimple.AdoteUmPet.repository.UsuarioRepository;
+import com.devsimple.AdoteUmPet.repository.NickRepository;
 import com.devsimple.AdoteUmPet.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -22,7 +22,7 @@ public class PetsService {
     private UserService usuarioService;
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private NickRepository usuarioRepository;
 
     @Transactional
     public Pets search(Long id){
