@@ -1,7 +1,7 @@
 package com.devsimple.AdoteUmPet.controller;
 
 import com.devsimple.AdoteUmPet.dto.RegisterPetDTO;
-import com.devsimple.AdoteUmPet.model.Nick;
+import com.devsimple.AdoteUmPet.model.User;
 import com.devsimple.AdoteUmPet.model.Pets;
 import com.devsimple.AdoteUmPet.services.PetsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +38,7 @@ public class PetsController {
     }
 
     @PutMapping("/usuario/adotar/{PetId}")
-    public ResponseEntity<Pets> adopt(@RequestBody Nick usuario, @PathVariable Long PetId){
+    public ResponseEntity<Pets> adopt(@RequestBody User usuario, @PathVariable Long PetId){
         return ResponseEntity.ok(petsService.adopt(usuario, PetId));
     }
 

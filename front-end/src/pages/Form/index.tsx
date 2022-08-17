@@ -3,17 +3,14 @@ import Footer from '../../components/Footer';
 import FormCard from '../../components/Form';
 import Navbar from '../../components/NavBar';
 
-
-
-function Form(){
-
+function Form() {
     const params = useParams();
 
-    return(
+    return (
         <>
-        <Navbar />
-        <FormCard petId={`${params.petId}`} />
-        <Footer />
+            <Navbar />
+            <FormCard petId={`${params.petId}`} />
+            <Footer />
         </>
     )
 }

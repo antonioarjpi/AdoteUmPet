@@ -39,11 +39,11 @@ public class Pets {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private Nick user;
+    private User user;
 
     @ManyToOne
     @JoinColumn(name = "adopter_id")
-    private Nick adopter;
+    private User adopter;
 
     public Pets(Long id, String name, String species, String breed, Double weight, String image, boolean adopted) {
         this.id = id;

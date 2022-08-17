@@ -1,10 +1,10 @@
 package com.devsimple.AdoteUmPet.services;
 
 import com.devsimple.AdoteUmPet.dto.RegisterPetDTO;
-import com.devsimple.AdoteUmPet.model.Nick;
+import com.devsimple.AdoteUmPet.model.User;
 import com.devsimple.AdoteUmPet.model.Pets;
 import com.devsimple.AdoteUmPet.repository.PetsRepository;
-import com.devsimple.AdoteUmPet.repository.NickRepository;
+import com.devsimple.AdoteUmPet.repository.UserRepository;
 import com.devsimple.AdoteUmPet.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -22,7 +22,7 @@ public class PetsService {
     private UserService usuarioService;
 
     @Autowired
-    private NickRepository usuarioRepository;
+    private UserRepository usuarioRepository;
 
     @Transactional
     public Pets search(Long id){
@@ -45,10 +45,10 @@ public class PetsService {
         Pets pets = new Pets(null, petDTO.getName(), petDTO.getSpecies(),  petDTO.getBreed(),
                 petDTO.getWeight(), petDTO.getImage(), petDTO.isAdopted());
 
-        Nick nick = usuarioRepository.findByEmail(petDTO.getEmail());
+        User nick = usuarioRepository.findByEmail(petDTO.getEmail());
 
         if (nick == null){
-            Nick user = new Nick(null, petDTO.getFirstAdopter(), petDTO.getLastAdopter(), petDTO.getPhone(), petDTO.getCity(),
+            User user = new User(null, petDTO.getFirstAdopter(), petDTO.getLastAdopter(), petDTO.getPhone(), petDTO.getCity(),
                     petDTO.getState(), petDTO.getEmail());
             pets.setUser(user);
             user = usuarioService.save(user);
@@ -60,11 +60,11 @@ public class PetsService {
     }
 
     @Transactional
-    public Pets adopt(Nick usuario, Long PetId){
+    public Pets adopt(User usuario, Long PetId){
         Pets pets = search(PetId);
-        Nick user = usuarioRepository.findByEmail(usuario.getEmail());
+        User user = usuarioRepository.findByEmail(usuario.getEmail());
         if (user == null){
-            user = new Nick();
+            user = new User();
             user.setEmail(usuario.getEmail());
             user.setFirstName(usuario.getFirstName());
             user.setLastName(usuario.getLastName());

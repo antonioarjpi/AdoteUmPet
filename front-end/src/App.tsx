@@ -9,8 +9,6 @@ function App() {
     <BrowserRouter>
       <Router />
     </BrowserRouter>
-    
-   
   );
 }
 

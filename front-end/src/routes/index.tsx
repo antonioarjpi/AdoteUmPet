@@ -4,12 +4,12 @@ import AddPet from "../pages/AddPet";
 import Form from "../pages/Form";
 
 
-export const Router = () =>{
-    return(
+export const Router = () => {
+    return (
         <Routes>
-            <Route path="/" element={<Home />} />    
-            <Route path="/cadastrarpet" element={<AddPet />} />  
-            <Route path="/form/:petId" element={<Form/>} />            
+            <Route path="/" element={<Home />} />
+            <Route path="/cadastrarpet" element={<AddPet />} />
+            <Route path="/form/:petId" element={<Form />} />
         </Routes>
     )
 }

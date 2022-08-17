@@ -1,11 +1,11 @@
 package com.devsimple.AdoteUmPet.repository;
 
-import com.devsimple.AdoteUmPet.model.Nick;
+import com.devsimple.AdoteUmPet.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-public interface NickRepository extends JpaRepository<Nick, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
     @Transactional
-    Nick findByEmail(String email);
+    User findByEmail(String email);
 }

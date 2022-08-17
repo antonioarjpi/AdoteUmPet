@@ -1,7 +1,7 @@
 package com.devsimple.AdoteUmPet.controller;
 
 
-import com.devsimple.AdoteUmPet.model.Nick;
+import com.devsimple.AdoteUmPet.model.User;
 import com.devsimple.AdoteUmPet.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,17 +17,17 @@ public class UserController {
     private UserService usuarioService;
 
     @GetMapping
-    public ResponseEntity<List<Nick>> listAll(){
+    public ResponseEntity<List<User>> listAll(){
         return ResponseEntity.ok(usuarioService.listAll());
     }
 
     @PostMapping
-    public ResponseEntity<Nick> save(@RequestBody Nick usuario){
+    public ResponseEntity<User> save(@RequestBody User usuario){
         return ResponseEntity.ok(usuarioService.save(usuario));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Nick> findById(@PathVariable Long id){
+    public ResponseEntity<User> findById(@PathVariable Long id){
         return ResponseEntity.ok(usuarioService.search(id));
     }
 }

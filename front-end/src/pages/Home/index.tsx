@@ -8,35 +8,30 @@ import Navbar from "../../components/NavBar";
 import Paralax from "../../components/Paralax";
 import './styles.css'
 
-function Home(){
-    return(
+function Home() {
+    return (
         <>
             <Navbar />
             <Paralax />
             <body>
-            <Carousel />
+                <Carousel />
                 <div className='container align-middle mt-5'>
-                    
                     <div className="row">
-                        
-                        <h2 className="brush">Animais prontos para receberem um lar <i className='fas fa-grin-beam'></i></h2> 
-                        <Listing />  
-                        
-                    </div> 
-                </div>           
-                    
-                    <h2 className='mt-5 brush'>Veja os bichinhos que já foram adotados <i className='fas fa-grin-hearts'></i></h2> 
-                    <div className='container'>
-                        <div className="row">
-                            <ListingAdopt />  
-                        </div>   
-                    </div>         
+                        <h2 className="brush">Animais prontos para receberem um lar <i className='fas fa-grin-beam'></i></h2>
+                        <Listing />
+                    </div>
+                </div>
+                <h2 className='mt-5 brush'>Veja os bichinhos que já foram adotados <i className='fas fa-grin-hearts'></i></h2>
+                <div className='container'>
+                    <div className="row">
+                        <ListingAdopt />
+                    </div>
+                </div>
             </body>
-                <About />        
-            
+            <About />
             <Footer />
         </>
-       
+
     )
 }
 export default Home;  

@@ -1,17 +1,13 @@
-import { useParams } from "react-router-dom";
 import Footer from "../../components/Footer";
 import ListingAdopt from "../../components/ListingAdopt";
 import Navbar from "../../components/NavBar";
 
-function Adopted(){
-
-    const params = useParams();
-
-    return(
+function Adopted() {
+    return (
         <>
-        <Navbar />
-        <ListingAdopt />
-        <Footer />
+            <Navbar />
+            <ListingAdopt />
+            <Footer />
         </>
     )
 }

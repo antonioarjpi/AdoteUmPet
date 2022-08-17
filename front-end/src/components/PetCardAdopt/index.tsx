@@ -5,7 +5,6 @@ type Props = {
     pets: Pets;
 }
 
-
 function PetCardAdopt( { pets } : Props){
 
     window.onload = function(){

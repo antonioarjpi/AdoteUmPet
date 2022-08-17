@@ -1,8 +1,7 @@
 import "./styles.css"
 
-
-function Footer(){
-    return(
+function Footer() {
+    return (
         <footer id="contatos">
             <div className="row my-5 justify-content-center py-5">
                 <div className="col-11">
@@ -10,7 +9,7 @@ function Footer(){
                         <div className="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
                             <h3 className="text-muted mb-md-0 mb-5 bold-text">AdoteUmPet</h3>
                         </div>
-                    
+
                         <div className="col-xl-2 col-md-4 col-sm-4 col-12">
                             <h6 className="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
                             <ul className="list-unstyled">
@@ -40,7 +39,7 @@ function Footer(){
                 </div>
             </div>
         </footer>
-   
+
     )
 }
 
